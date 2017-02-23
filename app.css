@@ -1,0 +1,27 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.people-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-stack {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Open Sans';
+}
+
+.card-header-details .icon::before {
+	position: relative;
+  right: 7px;
+  top: 1px;
+}
