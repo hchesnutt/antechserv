@@ -7,6 +7,17 @@ body {
 	padding: 0;
 }
 
+
+.nav-bar {
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  background-color: #333;
+  padding: 0 20px;
+  text-align: center;
+  color: #ffa700;
+}
+
 .people-box {
   display: flex;
   justify-content: space-between;

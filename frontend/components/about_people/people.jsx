@@ -2,30 +2,37 @@ import React from 'react';
 import peeps from './peeps';
 import { CardStack, Card } from 'react-cardstack';
 
-const People = (props) => (
-  <section className='people-box'>
-    <section className='fill'>
-      <h4>Cool Quote Man</h4>
-    </section>
-    <section className='card-stack'>
-      <CardStack
-        height={400}
-        width={400}
-        background="#f8f8f8"
-        hoverOffset={25}>
+class People extends React.Component {
+  constructor(props){
+    super(props)
+  }
 
-        {peeps.map((person, i) =>
-          <Card
-            key={i}
-            background={person.background}>
-            <TeamMemberCard {...person}/>
-          </Card>
-        )}
+  render(){
+    return(
+      <section className='people-box'>
+        <section className='fill'>
+          <h4>Cool Quote Man</h4>
+        </section>
+        <section className='card-stack'>
+          <CardStack
+            height={400}
+            width={400}
+            background="#f8f8f8"
+            hoverOffset={25}>
 
-      </CardStack>
-    </section>
-  </section>
-)
+            {peeps.map((person, i) =>
+              <Card
+                key={i}
+                background={person.background}>
+                <TeamMemberCard {...person}/>
+              </Card>
+            )}
+          </CardStack>
+        </section>
+      </section>
+    )
+  }
+};
 
 const ProfilePicture = ({ imgSrc, borderColor }) => (
 	<img
