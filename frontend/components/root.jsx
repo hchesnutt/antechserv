@@ -1,8 +1,9 @@
 import React from 'react';
-import People from './about_people/people';
 import Splash from './splash/splash';
 import NavBar from './nav_bar/nav_bar';
 import About from './about/about';
+import Clients from './clients/clients';
+import People from './about_people/people';
 
 
 const Root = () => {
@@ -11,6 +12,7 @@ const Root = () => {
       <Splash/>
       <NavBar/>
       <About/>
+      <Clients/>
       <People/>
     </section>
   );

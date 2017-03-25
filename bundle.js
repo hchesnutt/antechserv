@@ -9500,10 +9500,6 @@ var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _people = __webpack_require__(85);
-
-var _people2 = _interopRequireDefault(_people);
-
 var _splash = __webpack_require__(87);
 
 var _splash2 = _interopRequireDefault(_splash);
@@ -9516,6 +9512,14 @@ var _about = __webpack_require__(192);
 
 var _about2 = _interopRequireDefault(_about);
 
+var _clients = __webpack_require__(193);
+
+var _clients2 = _interopRequireDefault(_clients);
+
+var _people = __webpack_require__(85);
+
+var _people2 = _interopRequireDefault(_people);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Root = function Root() {
@@ -9525,6 +9529,7 @@ var Root = function Root() {
     _react2.default.createElement(_splash2.default, null),
     _react2.default.createElement(_nav_bar2.default, null),
     _react2.default.createElement(_about2.default, null),
+    _react2.default.createElement(_clients2.default, null),
     _react2.default.createElement(_people2.default, null)
   );
 };
@@ -9668,7 +9673,7 @@ var peeps = [{
 	role: 'Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby.'
 }, {
 	background: '#27AE60',
-	imgSrc: 'https://i.imgur.com/OG1l4x5.jpg',
+	imgSrc: './assets/dp_headshotphoto_1.jpg',
 	imgBorderColor: '#086C32',
 	name: 'David Pekelney',
 	title: 'Ego Stroke',
@@ -24167,6 +24172,60 @@ var About = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = About;
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(10);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Clients = function (_React$Component) {
+  _inherits(Clients, _React$Component);
+
+  function Clients(props) {
+    _classCallCheck(this, Clients);
+
+    return _possibleConstructorReturn(this, (Clients.__proto__ || Object.getPrototypeOf(Clients)).call(this, props));
+  }
+
+  _createClass(Clients, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'section',
+        { className: 'clients' },
+        _react2.default.createElement(
+          'p1',
+          null,
+          'Cool client logos go here'
+        )
+      );
+    }
+  }]);
+
+  return Clients;
+}(_react2.default.Component);
+
+exports.default = Clients;
 
 /***/ })
 /******/ ]);

@@ -10,7 +10,7 @@ const peeps = [{
 	role: 'Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby.'
 }, {
 	background: '#27AE60',
-	imgSrc: 'https://i.imgur.com/OG1l4x5.jpg',
+	imgSrc: './assets/dp_headshotphoto_1.jpg',
 	imgBorderColor: '#086C32',
 	name: 'David Pekelney',
 	title: 'Ego Stroke',
