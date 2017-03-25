@@ -1,5 +1,5 @@
 import React from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
+import { Sticky } from 'react-sticky';
 
 
 class NavBar extends React.Component {
@@ -9,7 +9,6 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <StickyContainer>
 
           <Sticky>
             <header className='nav-bar'>
@@ -17,7 +16,6 @@ class NavBar extends React.Component {
             </header>
           </Sticky>
 
-      </StickyContainer>
 
     );
   }

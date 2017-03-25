@@ -9520,17 +9520,23 @@ var _people = __webpack_require__(85);
 
 var _people2 = _interopRequireDefault(_people);
 
+var _reactSticky = __webpack_require__(178);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Root = function Root() {
   return _react2.default.createElement(
     'section',
     { className: 'total-page' },
-    _react2.default.createElement(_splash2.default, null),
-    _react2.default.createElement(_nav_bar2.default, null),
-    _react2.default.createElement(_about2.default, null),
-    _react2.default.createElement(_clients2.default, null),
-    _react2.default.createElement(_people2.default, null)
+    _react2.default.createElement(
+      _reactSticky.StickyContainer,
+      null,
+      _react2.default.createElement(_splash2.default, null),
+      _react2.default.createElement(_nav_bar2.default, null),
+      _react2.default.createElement(_about2.default, null),
+      _react2.default.createElement(_clients2.default, null),
+      _react2.default.createElement(_people2.default, null)
+    )
   );
 };
 
@@ -9969,16 +9975,12 @@ var NavBar = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _reactSticky.StickyContainer,
+        _reactSticky.Sticky,
         null,
         _react2.default.createElement(
-          _reactSticky.Sticky,
-          null,
-          _react2.default.createElement(
-            'header',
-            { className: 'nav-bar' },
-            '"links to parts go here"'
-          )
+          'header',
+          { className: 'nav-bar' },
+          '"links to parts go here"'
         )
       );
     }
