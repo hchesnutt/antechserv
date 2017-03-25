@@ -5,6 +5,9 @@
 body {
 	margin: 0;
 	padding: 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .splash {
@@ -33,6 +36,14 @@ body {
   padding: 0 20px;
   text-align: center;
   color: #ffa700;
+}
+
+.about {
+	height: 400px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .people-box {
