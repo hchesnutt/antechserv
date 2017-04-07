@@ -12,7 +12,9 @@ class Splash extends React.Component {
     console.log(Params)
     return (
         <div className='splash'>
-          <img src={'./assets/an_logo_medium.png'} className='splash-logo'/>
+          <div className='splash-logo-area'>
+            <img src={'./assets/an_logo_medium.png'} className='splash-logo'/>
+          </div>
           <Particles params={Params}/>
         </div>
     );

@@ -10181,7 +10181,11 @@ var Splash = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'splash' },
-        _react2.default.createElement('img', { src: './assets/an_logo_medium.png', className: 'splash-logo' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'splash-logo-area' },
+          _react2.default.createElement('img', { src: './assets/an_logo_medium.png', className: 'splash-logo' })
+        ),
         _react2.default.createElement(_reactParticlesJs2.default, { params: _params2.default })
       );
     }
