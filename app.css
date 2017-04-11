@@ -16,26 +16,72 @@ body {
 
 .splash {
 	display: block;
-	height 400px;
+	height: 400px;
 	/*background-image: url("./assets/an_logo_medium.png");
 	background-size: 20%;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;*/
 }
 
+.splash-particles {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	z-index: 1;
+}
+
 .splash-logo-area {
 	position: absolute;
-	top: 50%;
+	top: 20%;
 	left: 50%;
 	width: 200px;
 	height: 200px;
-	margin-top: -60px; /* Half the height */
-	margin-left: -60px; /* Half the width */
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index: 10
 }
 
 .splash-logo {
 	height: 200px;
 	width: 200px;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid black;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid #f00;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+
+  border-left: 60px solid green;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-right:10px solid blue;
 }
 
 .nav-bar {
