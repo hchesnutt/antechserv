@@ -1,5 +1,5 @@
 const peeps = [{
-	background: '#2980B9',
+	background: '#6BCAE2',
 	imgSrc: './assets/tc_headshotphoto_2.jpg',
 	imgBorderColor: '#015389',
 	name: 'Thomas W. Chesnutt, Ph.D., PStat®, CAP®',
@@ -9,7 +9,7 @@ const peeps = [{
 	location: 'Encinitas, CA',
 	role: 'Tom Chesnutt has pioneered innovative water rate reform, probability management, stochastic simulation and forecasting in the fields of water policy and economic modeling.'
 }, {
-	background: '#27AE60',
+	background: '51A5BA',
 	imgSrc: './assets/dp_headshotphoto_1.jpg',
 	imgBorderColor: '#086C32',
 	name: 'David Pekelney',
@@ -19,7 +19,7 @@ const peeps = [{
 	location: 'Los Angeles, CA',
 	role: 'David Pekelney has extensive experience analyzing financial, and economic, environmental policies in the areas of urban water conservation and planning, water recycling, and water demand using quantitative and qualitative methods.'
 }, {
-	background: '#9B27AE',
+	background: '#87e293',
 	imgSrc: './assets/dh_headshotphoto_1.jpg',
 	imgBorderColor: '#6A067A',
 	name: 'Dana Holt',
