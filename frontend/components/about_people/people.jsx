@@ -11,7 +11,8 @@ class People extends React.Component {
     return(
       <section className='people-box'>
         <section className='fill'>
-          <h4>Cool Quote Man</h4>
+          <h4>“The human brain is a complex organ with the wonderful power of enabling man to find reasons for continuing to believe whatever it is that he wants to believe.”
+― Voltaire</h4>
         </section>
         <section className='card-stack'>
           <CardStack
