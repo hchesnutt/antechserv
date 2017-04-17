@@ -23404,7 +23404,7 @@ var About = function (_React$Component) {
         _react2.default.createElement(
           'p1',
           null,
-          'A & N is love, A & N is life.'
+          'Welcome to A & N Technical Services Inc. We are a national consulting firm specializing in empirical policy analysis. We provide state-of-the-art financial expertise applied to water resources and water efficiency programs.'
         )
       );
     }
@@ -23426,35 +23426,35 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var peeps = [{
-	background: '#2980B9',
-	imgSrc: 'https://i.imgur.com/OG1l4x5.jpg',
+	background: '#6BCAE2',
+	imgSrc: './assets/tc_headshotphoto_2.jpg',
 	imgBorderColor: '#015389',
-	name: 'Tom Chesnutt',
-	title: 'Ego Stroke',
-	mobileNo: '7608098868',
-	faxNo: '7609426853',
-	location: 'Encinitas, CA',
-	role: 'Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby.'
-}, {
-	background: '#27AE60',
-	imgSrc: './assets/dp_headshotphoto_1.jpg',
-	imgBorderColor: '#086C32',
-	name: 'David Pekelney',
-	title: 'Ego Stroke',
-	mobileNo: '3104391883',
-	faxNo: '3104391884',
-	location: 'Los Angeles, CA',
-	role: 'Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby.'
-}, {
-	background: '#9B27AE',
-	imgSrc: 'https://i.imgur.com/OG1l4x5.jpg',
-	imgBorderColor: '#6A067A',
-	name: 'Dana Holt',
-	title: 'Ego Stroke',
+	name: 'Thomas W. Chesnutt, Ph.D., PStat®, CAP®',
+	title: 'CEO',
 	mobileNo: '7609425149',
 	faxNo: '7609426853',
 	location: 'Encinitas, CA',
-	role: 'Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby. Super short burlby.'
+	role: 'Tom Chesnutt has pioneered innovative water rate reform, probability management, stochastic simulation and forecasting in the fields of water policy and economic modeling.'
+}, {
+	background: '51A5BA',
+	imgSrc: './assets/dp_headshotphoto_1.jpg',
+	imgBorderColor: '#086C32',
+	name: 'David Pekelney',
+	title: 'Director of Policy Analysis',
+	mobileNo: '3104391883',
+	faxNo: '3104391884',
+	location: 'Los Angeles, CA',
+	role: 'David Pekelney has extensive experience analyzing financial, and economic, environmental policies in the areas of urban water conservation and planning, water recycling, and water demand using quantitative and qualitative methods.'
+}, {
+	background: '#87e293',
+	imgSrc: './assets/dh_headshotphoto_1.jpg',
+	imgBorderColor: '#6A067A',
+	name: 'Dana Holt',
+	title: 'Information Scientist',
+	mobileNo: '7609425149',
+	faxNo: '7609426853',
+	location: 'Encinitas, CA',
+	role: 'Dana Holt has over 26 years of experience in software and hardware project lifecycle development, software implementation, project management, technical writing, and training.'
 }];
 
 exports.default = peeps;
@@ -23513,7 +23513,7 @@ var People = function (_React$Component) {
 					_react2.default.createElement(
 						'h4',
 						null,
-						'\u201CThe human brain is a complex organ with the wonderful power of enabling man to find reasons for continuing to believe whatever it is that he wants to believe.\u201D \u2015 Voltaire'
+						'\u201CNothing is so difficult as not deceiving oneself." - Ludwig Wittgenstein '
 					)
 				),
 				_react2.default.createElement(
@@ -23736,7 +23736,7 @@ var Clients = function (_React$Component) {
         _react2.default.createElement(
           'p1',
           null,
-          'Cool client logos go here'
+          'client logos go here  ... Alec can you look up Water Research Foundation, US EPA, LADWP, SDCWA, Metropolitan Water District,'
         )
       );
     }
@@ -23792,7 +23792,7 @@ var NavBar = function (_React$Component) {
         _react2.default.createElement(
           'header',
           { className: 'nav-bar' },
-          '"links to parts go here"'
+          '"This is the Navigation Bar. Links to sections below. To be done/Progress Pending."'
         )
       );
     }
