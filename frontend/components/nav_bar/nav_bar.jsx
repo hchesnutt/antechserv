@@ -12,7 +12,7 @@ class NavBar extends React.Component {
 
           <Sticky>
             <header className='nav-bar'>
-              "links to parts go here"
+              "This is the Navigation Bar. Links to sections below. To be done/Progress Pending."
             </header>
           </Sticky>
 
