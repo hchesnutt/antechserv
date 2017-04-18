@@ -10006,10 +10006,10 @@ var NavBar = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         _reactSticky.Sticky,
-        null,
+        { className: 'nav-bar' },
         _react2.default.createElement(
           'header',
-          { className: 'nav-bar' },
+          { className: 'nav-bar-text' },
           '"This is the Navigation Bar. Links to sections below. To be done/Progress Pending."'
         )
       );

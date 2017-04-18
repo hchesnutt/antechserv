@@ -9,14 +9,11 @@ class NavBar extends React.Component {
 
   render() {
     return (
-
-          <Sticky>
-            <header className='nav-bar'>
-              "This is the Navigation Bar. Links to sections below. To be done/Progress Pending."
-            </header>
-          </Sticky>
-
-
+      <Sticky className='nav-bar'>
+        <header className='nav-bar-text'>
+          "This is the Navigation Bar. Links to sections below. To be done/Progress Pending."
+        </header>
+      </Sticky>
     );
   }
 };
