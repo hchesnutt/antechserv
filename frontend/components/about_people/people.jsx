@@ -11,7 +11,7 @@ class People extends React.Component {
     return(
       <section className='people-box'>
         <section className='fill'>
-          <h4>“Nothing is so difficult as not deceiving oneself." - Ludwig Wittgenstein </h4>
+          <h4>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
         </section>
         <section className='card-stack'>
           <CardStack
