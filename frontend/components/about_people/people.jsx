@@ -16,7 +16,7 @@ class People extends React.Component {
         <section className='card-stack'>
           <CardStack
             height={400}
-            width={425}
+            width={450}
             background="#f8f8f8"
             hoverOffset={25}>
 

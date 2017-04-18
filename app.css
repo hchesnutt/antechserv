@@ -192,11 +192,12 @@ table {
 }
 
 .pubs-list img {
+	width: 320px;
 	display: block;
-	height: auto;
-	-webkit-transition: all 300ms;
-	-moz-transition: all 300ms;
-	transition: all 300ms;
+	height: 400px;
+	-webkit-transition: all 500ms;
+	-moz-transition: all 500ms;
+	transition: all 500ms;
 	max-width: 100%;
 }
 
@@ -216,6 +217,8 @@ table {
 	position: absolute;
 	right: 0;
 	top: 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .pubs-list figcaption p {
@@ -223,11 +226,13 @@ table {
 	font-size: 1em;
 	position: relative;
 	top: -40px;
-	width: 289px;
-	-webkit-transition: all 300ms ease-out;
-	-moz-transition: all 300ms ease-out;
-	transition: all 300ms ease-out;
+	width: 269px;
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition: all 500ms ease-out;
+	transition: all 500ms ease-out;
 	vertical-align: middle;
+	margin-top: 5%;
+	margin-left: 10px;
 }
 
 .pubs-list figcaption h4 {
@@ -235,11 +240,13 @@ table {
 	font-size: 1.2em;
 	position: relative;
 	top: -40px;
-	width: 289px;
-	-webkit-transition: all 300ms ease-out;
-	-moz-transition: all 300ms ease-out;
-	transition: all 300ms ease-out;
+	width: 269px;
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition: all 500ms ease-out;
+	transition: all 500ms ease-out;
 	vertical-align: middle;
+	margin-top: 5%;
+	margin-left: 10px;
 }
 
 .pubs-list figcaption h4:after {
@@ -250,6 +257,8 @@ table {
   transition: transform 500ms ease-in-out;
 	width: 50%;
 	margin-left: 25%;
+	padding-bottom: 5%;
+
 }
 
 
