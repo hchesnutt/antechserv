@@ -17,19 +17,10 @@ body {
 .splash {
 	display: block;
 	height: 400px;
-	/*background-image: url("./assets/an_logo_medium.png");
-	background-size: 20%;
+	background-image: url("./assets/scream_nature.jpg");
+	background-size: 100%;
 	background-repeat: no-repeat;
-	background-position: 50% 50%;*/
-}
-
-.splash-particles {
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	padding: 0px;
-	margin: 0px;
-	z-index: 1;
+	background-position: 0% 80%;
 }
 
 .splash-logo-area {
