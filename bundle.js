@@ -9665,7 +9665,7 @@ var peeps = [{
 	role: 'David Pekelney has extensive experience analyzing financial, and economic, environmental policies in the areas of urban water conservation and planning, water recycling, and water demand using quantitative and qualitative methods.'
 }, {
 	background: '#87e293',
-	imgSrc: './assets/dh_headshotphoto_1.jpg',
+	imgSrc: './assets/dh_headshot_1.jpeg',
 	imgBorderColor: '#6A067A',
 	name: 'Dana Holt',
 	title: 'Information Scientist',
