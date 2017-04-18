@@ -1,15 +1,15 @@
 const peeps = [{
-	background: '#6BCAE2',
+	background: '#51A5BA',
 	imgSrc: './assets/tc_headshotphoto_2.jpg',
 	imgBorderColor: '#015389',
-	name: 'Thomas W. Chesnutt, Ph.D., PStat®, CAP®',
+	name: 'Thomas W. Chesnutt, Ph.D., PStat, CAP',
 	title: 'CEO',
 	mobileNo: '7609425149',
   faxNo: '7609426853',
 	location: 'Encinitas, CA',
 	role: 'Tom Chesnutt has pioneered innovative water rate reform, probability management, stochastic simulation and forecasting in the fields of water policy and economic modeling.'
 }, {
-	background: '51A5BA',
+	background: '#6BCAE2',
 	imgSrc: './assets/dp_headshotphoto_1.jpg',
 	imgBorderColor: '#086C32',
 	name: 'David Pekelney',

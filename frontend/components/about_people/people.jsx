@@ -16,7 +16,7 @@ class People extends React.Component {
         <section className='card-stack'>
           <CardStack
             height={400}
-            width={400}
+            width={425}
             background="#f8f8f8"
             hoverOffset={25}>
 
@@ -33,6 +33,38 @@ class People extends React.Component {
     )
   }
 };
+
+const TeamMemberCard = (props) => (
+  <section style={{ position: 'absolute', top: 0 }} onClick={props.onClick}>
+    <header style={styles.cardHeader} className='card-header-details'>
+      <ProfilePicture imgSrc={props.imgSrc} borderColor={props.imgBorderColor} />
+      <section>
+        <h1 style={styles.headerName}>{props.name}</h1>
+        <h3 style={styles.headerTitle} className='icon ion-ios-arrow-down'>{props.title}</h3>
+      </section>
+    </header>
+
+    <section style={{color: '#000000'}}>
+      <section style={{display: 'flex'}}>
+        <DetailsRow
+          icon='ion-ios-telephone-outline'
+          title={props.mobileNo}
+          />
+
+        <DetailsRow
+          icon='ion-ios-location-outline'
+          title={props.location}
+          />
+      </section>
+
+      <DetailsRow
+        icon='icon ion-ios-paper-outline'
+        title='About'
+        summary={props.role}
+        />
+    </section>
+  </section>
+);
 
 const ProfilePicture = ({ imgSrc, borderColor }) => (
 	<img
@@ -72,42 +104,6 @@ const DetailsRow = ({ icon, title, summary }) => {
 	);
 };
 
-			// <DetailsRow
-			// 	icon='ion-ios-upload-outline'
-			// 	title={props.faxNo}
-			// />
-
-
-const TeamMemberCard = (props) => (
-	<section style={{ position: 'absolute', top: 0 }} onClick={props.onClick}>
-		<header style={styles.cardHeader} className='card-header-details'>
-			<ProfilePicture imgSrc={props.imgSrc} borderColor={props.imgBorderColor} />
-			<section>
-				<h1 style={styles.headerName}>{props.name}</h1>
-				<h3 style={styles.headerTitle} className='icon ion-ios-arrow-down'>{props.title}</h3>
-			</section>
-		</header>
-
-		<section style={{color: '#fff'}}>
-			<DetailsRow
-				icon='ion-ios-telephone-outline'
-				title={props.mobileNo}
-			/>
-
-			<DetailsRow
-				icon='ion-ios-location-outline'
-				title={props.location}
-			/>
-
-			<DetailsRow
-				icon='icon ion-ios-paper-outline'
-				title='Main Role'
-				summary={props.role}
-			/>
-		</section>
-  </section>
-);
-
 const styles = {
 	cardHeader: {
 		display: 'flex',
@@ -115,7 +111,7 @@ const styles = {
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		padding: '10px 20px',
-		color: '#fff',
+		color: '#000000',
 	},
 	headerName: {
 		margin: 0,
@@ -136,7 +132,7 @@ const styles = {
 			padding: '0 20px',
 			display: 'flex',
 			alignItems: 'center',
-			margin: '25px 0',
+			margin: '10px 0',
 		},
 		icon: {
 			display: 'block',

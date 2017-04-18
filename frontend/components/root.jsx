@@ -5,7 +5,7 @@ import About from './about/about';
 import Clients from './clients/clients';
 import People from './about_people/people';
 import Pubs from './publications/pubs';
-import {StickyContainer} from 'react-sticky'
+import { StickyContainer } from 'react-sticky'
 
 
 const Root = () => {

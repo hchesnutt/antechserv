@@ -9644,17 +9644,17 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var peeps = [{
-	background: '#6BCAE2',
+	background: '#51A5BA',
 	imgSrc: './assets/tc_headshotphoto_2.jpg',
 	imgBorderColor: '#015389',
-	name: 'Thomas W. Chesnutt, Ph.D., PStat®, CAP®',
+	name: 'Thomas W. Chesnutt, Ph.D., PStat, CAP',
 	title: 'CEO',
 	mobileNo: '7609425149',
 	faxNo: '7609426853',
 	location: 'Encinitas, CA',
 	role: 'Tom Chesnutt has pioneered innovative water rate reform, probability management, stochastic simulation and forecasting in the fields of water policy and economic modeling.'
 }, {
-	background: '51A5BA',
+	background: '#6BCAE2',
 	imgSrc: './assets/dp_headshotphoto_1.jpg',
 	imgBorderColor: '#086C32',
 	name: 'David Pekelney',
@@ -9741,7 +9741,7 @@ var People = function (_React$Component) {
 						_reactCardstack.CardStack,
 						{
 							height: 400,
-							width: 400,
+							width: 425,
 							background: '#f8f8f8',
 							hoverOffset: 25 },
 						_peeps2.default.map(function (person, i) {
@@ -9763,6 +9763,53 @@ var People = function (_React$Component) {
 }(_react2.default.Component);
 
 ;
+
+var TeamMemberCard = function TeamMemberCard(props) {
+	return _react2.default.createElement(
+		'section',
+		{ style: { position: 'absolute', top: 0 }, onClick: props.onClick },
+		_react2.default.createElement(
+			'header',
+			{ style: styles.cardHeader, className: 'card-header-details' },
+			_react2.default.createElement(ProfilePicture, { imgSrc: props.imgSrc, borderColor: props.imgBorderColor }),
+			_react2.default.createElement(
+				'section',
+				null,
+				_react2.default.createElement(
+					'h1',
+					{ style: styles.headerName },
+					props.name
+				),
+				_react2.default.createElement(
+					'h3',
+					{ style: styles.headerTitle, className: 'icon ion-ios-arrow-down' },
+					props.title
+				)
+			)
+		),
+		_react2.default.createElement(
+			'section',
+			{ style: { color: '#000000' } },
+			_react2.default.createElement(
+				'section',
+				{ style: { display: 'flex' } },
+				_react2.default.createElement(DetailsRow, {
+					icon: 'ion-ios-telephone-outline',
+					title: props.mobileNo
+				}),
+				_react2.default.createElement(DetailsRow, {
+					icon: 'ion-ios-location-outline',
+					title: props.location
+				})
+			),
+			_react2.default.createElement(DetailsRow, {
+				icon: 'icon ion-ios-paper-outline',
+				title: 'About',
+				summary: props.role
+			})
+		)
+	);
+};
 
 var ProfilePicture = function ProfilePicture(_ref) {
 	var imgSrc = _ref.imgSrc,
@@ -9812,55 +9859,6 @@ var DetailsRow = function DetailsRow(_ref2) {
 	);
 };
 
-// <DetailsRow
-// 	icon='ion-ios-upload-outline'
-// 	title={props.faxNo}
-// />
-
-
-var TeamMemberCard = function TeamMemberCard(props) {
-	return _react2.default.createElement(
-		'section',
-		{ style: { position: 'absolute', top: 0 }, onClick: props.onClick },
-		_react2.default.createElement(
-			'header',
-			{ style: styles.cardHeader, className: 'card-header-details' },
-			_react2.default.createElement(ProfilePicture, { imgSrc: props.imgSrc, borderColor: props.imgBorderColor }),
-			_react2.default.createElement(
-				'section',
-				null,
-				_react2.default.createElement(
-					'h1',
-					{ style: styles.headerName },
-					props.name
-				),
-				_react2.default.createElement(
-					'h3',
-					{ style: styles.headerTitle, className: 'icon ion-ios-arrow-down' },
-					props.title
-				)
-			)
-		),
-		_react2.default.createElement(
-			'section',
-			{ style: { color: '#fff' } },
-			_react2.default.createElement(DetailsRow, {
-				icon: 'ion-ios-telephone-outline',
-				title: props.mobileNo
-			}),
-			_react2.default.createElement(DetailsRow, {
-				icon: 'ion-ios-location-outline',
-				title: props.location
-			}),
-			_react2.default.createElement(DetailsRow, {
-				icon: 'icon ion-ios-paper-outline',
-				title: 'Main Role',
-				summary: props.role
-			})
-		)
-	);
-};
-
 var styles = {
 	cardHeader: {
 		display: 'flex',
@@ -9868,7 +9866,7 @@ var styles = {
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		padding: '10px 20px',
-		color: '#fff'
+		color: '#000000'
 	},
 	headerName: {
 		margin: 0,
@@ -9889,7 +9887,7 @@ var styles = {
 			padding: '0 20px',
 			display: 'flex',
 			alignItems: 'center',
-			margin: '25px 0'
+			margin: '10px 0'
 		},
 		icon: {
 			display: 'block',
