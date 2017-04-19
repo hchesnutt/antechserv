@@ -10219,15 +10219,30 @@ var Splash = function (_React$Component) {
   function Splash(props) {
     _classCallCheck(this, Splash);
 
-    return _possibleConstructorReturn(this, (Splash.__proto__ || Object.getPrototypeOf(Splash)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Splash.__proto__ || Object.getPrototypeOf(Splash)).call(this, props));
+
+    console.log(_this.state);
+    _this.state = {
+      bgId: 0
+    };
+    _this.imgs = ['./assets/splash/scream_nature.jpg', './assets/splash/splash01.png', './assets/splash/splash02.jpg'];
+    return _this;
   }
 
   _createClass(Splash, [{
     key: 'render',
     value: function render() {
+      var newbgId = this.state.bgId === 2 ? 0 : this.state.bgId + 1;
+      setTimeout(function () {
+        this.setState({ bgId: newbgId });
+      }.bind(this), 7000);
+      var divStyle = {
+        backgroundImage: 'url(' + this.imgs[newbgId] + ')'
+      };
+      console.log(divStyle);
       return _react2.default.createElement(
         'div',
-        { className: 'splash' },
+        { className: 'splash', style: divStyle },
         _react2.default.createElement(
           'div',
           { className: 'splash-logo-area' },
