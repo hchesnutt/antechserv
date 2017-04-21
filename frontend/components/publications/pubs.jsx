@@ -1,6 +1,7 @@
 import React from 'react';
 import PubCard from './pub_card';
 import Publications from './publications';
+import { Element } from 'react-scroll';
 
 class Pubs extends React.Component {
   constructor(props){
@@ -10,7 +11,7 @@ class Pubs extends React.Component {
 
   render(){
     return(
-      <section className='pubs'>
+      <Element name='pubs' className='pubs'>
         <ul className='pubs-list'>
           {Publications.map((pubSingle, i) => (
             <li key={i}>
@@ -18,7 +19,7 @@ class Pubs extends React.Component {
             </li>
           ))}
         </ul>
-      </section>
+      </Element>
     );
   }
 }

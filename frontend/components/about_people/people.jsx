@@ -1,6 +1,8 @@
 import React from 'react';
 import peeps from './peeps';
 import { CardStack, Card } from 'react-cardstack';
+import { Element } from 'react-scroll';
+
 
 class People extends React.Component {
   constructor(props){
@@ -9,27 +11,27 @@ class People extends React.Component {
 
   render(){
     return(
-      <section className='people-box'>
-        <section className='fill'>
-          <h4>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
-        </section>
-        <section className='card-stack'>
-          <CardStack
-            height={400}
-            width={450}
-            background="#f8f8f8"
-            hoverOffset={25}>
+        <Element name='people' className='people-box'>
+          <section className='fill'>
+            <h4>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
+          </section>
+          <section className='card-stack'>
+            <CardStack
+              height={400}
+              width={450}
+              background="#f8f8f8"
+              hoverOffset={25}>
 
-            {peeps.map((person, i) =>
-              <Card
-                key={i}
-                background={person.background}>
-                <TeamMemberCard {...person}/>
-              </Card>
-            )}
-          </CardStack>
-        </section>
-      </section>
+              {peeps.map((person, i) =>
+                <Card
+                  key={i}
+                  background={person.background}>
+                  <TeamMemberCard {...person}/>
+                </Card>
+              )}
+            </CardStack>
+          </section>
+        </Element>
     )
   }
 };

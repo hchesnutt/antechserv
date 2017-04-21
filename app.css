@@ -94,7 +94,6 @@ table {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-
   border-bottom: 5px solid black;
 }
 
@@ -132,10 +131,24 @@ table {
   padding: 0 20px;
   text-align: center;
   color: #ffa700;
+
 }
 
 .nav-bar {
 	z-index: 1000;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+}
+
+.nav-active {
+	height: 80px;
+  width: 100%;
+  line-height: 80px;
+  background-color: #333;
+  padding: 0 20px;
+  text-align: center;
+  color: red;
 }
 
 .about {
