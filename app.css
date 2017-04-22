@@ -78,7 +78,6 @@ table {
 	position: absolute;
 	top: 25%;
 	left: 50%;
-
 	margin-top: -60px;
 	margin-left: -220px;
 	z-index: 10
@@ -172,6 +171,22 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.fill {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+.particles {
+	height: 400px;
+}
+
+.people-quote {
+	position: absolute;
+	top: 200px;
+	left: 10%;
 }
 
 .card-stack {

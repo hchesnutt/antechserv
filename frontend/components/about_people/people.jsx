@@ -1,5 +1,7 @@
 import React from 'react';
 import peeps from './peeps';
+import Particles from 'react-particles-js';
+import Params from './params.json';
 import { CardStack, Card } from 'react-cardstack';
 import { Element } from 'react-scroll';
 
@@ -13,7 +15,8 @@ class People extends React.Component {
     return(
         <Element name='people' className='people-box'>
           <section className='fill'>
-            <h4>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
+            <h4 className='people-quote'>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
+            <Particles params={Params} className='particles'/>
           </section>
           <section className='card-stack'>
             <CardStack
