@@ -130,7 +130,7 @@ table {
   padding: 0 20px;
   text-align: center;
   color: #ffa700;
-
+	cursor: pointer;
 }
 
 .nav-bar {
@@ -148,6 +148,7 @@ table {
   padding: 0 20px;
   text-align: center;
   color: red;
+	cursor: pointer;
 }
 
 .about {
