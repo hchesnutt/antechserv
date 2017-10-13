@@ -11844,7 +11844,7 @@ var Splash = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'splash-logo-area' },
-          _react2.default.createElement('img', { src: './assets/an_logo/AN_LOGO_Name_large.JPG', className: 'splash-logo' })
+          _react2.default.createElement('img', { src: './assets/an_logo/A&N_logotype_med.png', className: 'splash-logo' })
         )
       );
     }

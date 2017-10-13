@@ -69,7 +69,7 @@ table {
 .splash {
 	display: block;
 	height: 400px;
-	background-image: url('./assets/splash/splash02.jpg');
+	background-image: url('./assets/splash/fountain.gif');
 	background-repeat: no-repeat;
 	background-size: cover;
 }

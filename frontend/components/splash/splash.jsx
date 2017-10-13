@@ -9,7 +9,7 @@ class Splash extends React.Component {
     return (
         <div className='splash'>
           <div className='splash-logo-area'>
-            <img src={'./assets/an_logo/AN_LOGO_Name_large.JPG'} className='splash-logo'/>
+            <img src={'./assets/an_logo/A&N_logotype_med.png'} className='splash-logo'/>
           </div>
         </div>
     );
