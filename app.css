@@ -69,7 +69,7 @@ table {
 .splash {
 	display: block;
 	height: 400px;
-	background-image: url('./assets/splash/fountain.gif');
+	background-image: url('./assets/splash/recycle_water_600x600.gif');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -129,7 +129,7 @@ table {
   background-color: #333;
   padding: 0 20px;
   text-align: center;
-  color: #ffa700;
+  color: white;
 	cursor: pointer;
 }
 
@@ -147,8 +147,9 @@ table {
   background-color: #333;
   padding: 0 20px;
   text-align: center;
-  color: red;
 	cursor: pointer;
+	color: white;
+	border-bottom: solid 5px #019fb6;
 }
 
 .about {
@@ -165,7 +166,7 @@ table {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #78D5E3;
+	background-color: white;
 }
 
 .people-box {

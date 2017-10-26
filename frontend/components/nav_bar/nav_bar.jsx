@@ -51,7 +51,7 @@ class NavBar extends React.Component {
         <Link activeClass="nav-active" className="nav-bar-text" to="pubs" spy={true} smooth={true} offset={-200} duration={500}>
           <h2>Publications</h2>
         </Link>
-        <Link  activeClass="nav-active" className="nav-bar-text" to="people" spy={true} smooth={true} offset={-200} duration={500}>
+        <Link activeClass="nav-active" className="nav-bar-text" to="people" spy={true} smooth={true} offset={-200} duration={500}>
           <h2>People</h2>
         </Link>
       </Sticky>
