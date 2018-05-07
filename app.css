@@ -161,12 +161,11 @@ table {
 }
 
 .clients {
+	display: block;
 	height: 400px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-	background-color: white;
+	background-image: url('./assets/splash/splash02.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .people-box {
