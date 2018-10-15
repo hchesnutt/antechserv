@@ -11490,7 +11490,7 @@ var Clients = function (_React$Component) {
         _react2.default.createElement(
           'p1',
           null,
-          'client logos go here  ... Alec can you look up Water Research Foundation, US EPA, LADWP, SDCWA, Metropolitan Water District,'
+          ''
         )
       );
     }
