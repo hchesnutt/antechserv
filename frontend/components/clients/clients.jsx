@@ -11,7 +11,7 @@ class Clients extends React.Component {
     return(
       <Element name='clients' className='clients'>
         <p1>
-            Water Research Foundation, US EPA, LADWP, SDCWA, Metropolitan Water District
+            //Water Research Foundation, US EPA, LADWP, SDCWA, Metropolitan Water District
         </p1>
       </Element>
     )
