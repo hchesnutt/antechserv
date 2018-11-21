@@ -4,7 +4,9 @@
   "description": "build of company site for antechserv",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "webpack --config webpack.config.js",
+	"watch": "webpack -w --config webpack.config.js"
   },
   "author": "taylor.chesnutt@gmail.com",
   "license": "ISC",
