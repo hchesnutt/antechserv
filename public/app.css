@@ -152,13 +152,13 @@ table {
 	border-bottom: solid 5px #019fb6;
 }
 
-.about {
+/* .about {
 	height: 400px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-}
+} */
 
 /* .clients {
 	display: block;
