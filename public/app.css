@@ -160,13 +160,13 @@ table {
 	justify-content: center;
 }
 
-.clients {
+/* .clients {
 	display: block;
 	height: 400px;
 	background-image: url('./assets/splash/splash02.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-}
+} */
 
 .people-box {
   display: flex;

@@ -4,7 +4,6 @@ import { Element } from 'react-scroll';
 import styles from './clients.css';
 import clientImages from '../../../assets/clients';
 
-
 class Clients extends React.Component {
   constructor(props){
     super(props);
@@ -12,10 +11,10 @@ class Clients extends React.Component {
 
   render(){
     return(
-      <Element name='clients' className='clients'>
+      <Element name='clients' className={styles.clients}>
         {clientImages.map(image => (
-          <img src={image} style={styles} />
-        ))}
+          <img src={image} />
+          ))}
       </Element>
     )
   }
