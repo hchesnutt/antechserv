@@ -168,7 +168,7 @@ table {
 	background-size: cover;
 } */
 
-.people-box {
+/* .people-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -188,20 +188,20 @@ table {
 	position: absolute;
 	top: 200px;
 	left: 10%;
-}
+} */
 
-.card-stack {
+/* .card-stack {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-family: 'Open Sans';
-}
+} */
 
-.card-header-details .icon::before {
+/* .card-header-details .icon::before {
 	position: relative;
   right: 7px;
   top: 1px;
-}
+} */
 
 .pubs-list {
 	margin: 1em auto;

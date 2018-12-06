@@ -5,6 +5,8 @@ import Params from './params.json';
 import { CardStack, Card } from 'react-cardstack';
 import { Element } from 'react-scroll';
 
+import CSSstyles from './people.css';
+
 
 class People extends React.Component {
   constructor(props){
@@ -13,12 +15,12 @@ class People extends React.Component {
 
   render(){
     return(
-        <Element name='people' className='people-box'>
-          <section className='fill'>
-            <h4 className='people-quote'>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
-            <Particles params={Params} className='particles'/>
+        <Element name='people' className={CSSstyles.peopleBox}>
+          <section className={CSSstyles.fill}>
+            <h4 className={CSSstyles.peopleQuote}>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
+            <Particles params={Params} className={CSSstyles.particles}/>
           </section>
-          <section className='card-stack'>
+          <section className={CSSstyles.cardStack}>
             <CardStack
               height={400}
               width={450}
@@ -41,11 +43,11 @@ class People extends React.Component {
 
 const TeamMemberCard = (props) => (
   <section style={{ position: 'absolute', top: 0 }} onClick={props.onClick}>
-    <header style={styles.cardHeader} className='card-header-details'>
+    <header style={styles.cardHeader} className={CSSstyles.cardHeaderDetails}>
       <ProfilePicture imgSrc={props.imgSrc} borderColor={props.imgBorderColor} />
       <section>
         <h1 style={styles.headerName}>{props.name}</h1>
-        <h3 style={styles.headerTitle} className='icon ion-ios-arrow-down'>{props.title}</h3>
+        <h3 style={styles.headerTitle} className={[CSSstyles.icon, CSSstyles.ionIosArrowDown]}>{props.title}</h3>
       </section>
     </header>
 

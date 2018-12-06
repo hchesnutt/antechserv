@@ -1,0 +1,38 @@
+.peopleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fill {
+  width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+.peopleQuote {
+  position: absolute;
+	top: 200px;
+	left: 10%;
+}
+
+.particles {
+  height: 400px;
+}
+
+.cardStack {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Open Sans';
+}
+
+.cardHeaderDetails .icon::before {
+	position: relative;
+  right: 7px;
+  top: 1px;
+}
+
+/* icon
+ion-ios-arrow-down
+icon * */
