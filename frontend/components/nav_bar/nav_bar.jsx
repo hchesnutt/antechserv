@@ -2,6 +2,7 @@ import React from 'react';
 import { Sticky } from 'react-sticky';
 import { Link, Element, Events, animateScroll, scrollSpy } from 'react-scroll';
 
+import styles from './nav_bar.css';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -41,17 +42,17 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <Sticky className='nav-bar'>
-        <Link activeClass="nav-active" className="nav-bar-text" to="about" spy={true} smooth={true} offset={-200} duration={500} onSetActive={this.handleSetActive}>
+      <Sticky className={styles.navBar}>
+        <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-200} duration={500} onSetActive={this.handleSetActive}>
           <h2>About</h2>
         </Link>
-        <Link activeClass="nav-active" className="nav-bar-text" to="clients" spy={true} smooth={true} offset={-200} duration={500}>
+        <Link activeClass="navActive" className={styles.navBarText} to="clients" spy={true} smooth={true} offset={-200} duration={500}>
           <h2>Clients</h2>
         </Link>
-        <Link activeClass="nav-active" className="nav-bar-text" to="pubs" spy={true} smooth={true} offset={-200} duration={500}>
+        <Link activeClass="navActive" className={styles.navBarText} to="pubs" spy={true} smooth={true} offset={-200} duration={500}>
           <h2>Publications</h2>
         </Link>
-        <Link activeClass="nav-active" className="nav-bar-text" to="people" spy={true} smooth={true} offset={-200} duration={500}>
+        <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-200} duration={500}>
           <h2>People</h2>
         </Link>
       </Sticky>

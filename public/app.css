@@ -122,7 +122,7 @@ table {
   border-right:10px solid blue;
 }
 
-.nav-bar-text {
+/* .nav-bar-text {
   height: 80px;
   width: 100%;
   line-height: 80px;
@@ -138,9 +138,9 @@ table {
 	background-color: #333;
 	display: flex;
 	justify-content: center;
-}
+} */
 
-.nav-active {
+/* .nav-active {
 	height: 80px;
   width: 100%;
   line-height: 80px;
@@ -150,7 +150,7 @@ table {
 	cursor: pointer;
 	color: white;
 	border-bottom: solid 5px #019fb6;
-}
+} */
 
 /* .about {
 	height: 400px;

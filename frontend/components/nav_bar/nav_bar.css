@@ -1,0 +1,29 @@
+.navBar {
+	z-index: 1000;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+}
+
+.navBarText {
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  background-color: #333;
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+	cursor: pointer;
+}
+
+.navActive {
+	height: 80px;
+  width: 100%;
+  line-height: 80px;
+  background-color: #333;
+  padding: 0 20px;
+  text-align: center;
+	cursor: pointer;
+	color: white;
+	border-bottom: solid 5px #019fb6;
+}
