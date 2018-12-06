@@ -1,0 +1,21 @@
+.splash {
+	display: block;
+	height: 400px;
+	background-image: url('../../../assets/splash/running-water-6.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.splashLogoArea {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -220px;
+	z-index: 10
+}
+
+.splashLogo {
+	height: 120px;
+	width: 445px;
+}
