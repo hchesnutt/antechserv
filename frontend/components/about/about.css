@@ -1,7 +1,30 @@
 .about {
-	height: 400px;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
   justify-content: center;
+}
+
+.aboutText {
+  margin-top: 150px;
+  padding: 10vh;
+  font-size: 26px;
+  text-align: center;
+  /* background-color: #4286f4; */
+  
+}
+
+.splashLogoArea {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -220px;
+	z-index: 10
+}
+
+.splashLogo {
+	height: 120px;
+	width: 445px;
 }
