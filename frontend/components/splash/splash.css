@@ -1,9 +1,9 @@
 .splash {
 	display: block;
-	height: 400px;
-	background-image: url('../../../assets/splash/running-water-6.gif');
+	height: 100vh;
+	/* background-image: url('../../../assets/splash/water\ 1.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover; */
 }
 
 .splashLogoArea {
