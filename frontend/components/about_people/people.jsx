@@ -5,6 +5,8 @@ import Params from './params.json';
 import { CardStack, Card } from 'react-cardstack';
 import { Element } from 'react-scroll';
 
+import styles from './people.css';
+
 
 class People extends React.Component {
   constructor(props){
@@ -13,12 +15,12 @@ class People extends React.Component {
 
   render(){
     return(
-        <Element name='people' className='people-box'>
-          <section className='fill'>
-            <h4 className='people-quote'>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
-            <Particles params={Params} className='particles'/>
+        <Element name='people' className={styles.peopleBox}>
+          <section className={styles.fill}>
+            <h4 className={styles.peopleQuote}>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
+            <Particles params={Params} className={styles.particles}/>
           </section>
-          <section className='card-stack'>
+          <section className={styles.cardStack}>
             <CardStack
               height={400}
               width={450}
@@ -41,11 +43,11 @@ class People extends React.Component {
 
 const TeamMemberCard = (props) => (
   <section style={{ position: 'absolute', top: 0 }} onClick={props.onClick}>
-    <header style={styles.cardHeader} className='card-header-details'>
+    <header style={inlineStyles.cardHeader} className={styles.cardHeaderDetails}>
       <ProfilePicture imgSrc={props.imgSrc} borderColor={props.imgBorderColor} />
       <section>
-        <h1 style={styles.headerName}>{props.name}</h1>
-        <h3 style={styles.headerTitle} className='icon ion-ios-arrow-down'>{props.title}</h3>
+        <h1 style={inlineStyles.headerName}>{props.name}</h1>
+        <h3 style={inlineStyles.headerTitle} className={[styles.icon, styles.ionIosArrowDown]}>{props.title}</h3>
       </section>
     </header>
 
@@ -94,13 +96,13 @@ const DetailsRow = ({ icon, title, summary }) => {
 	};
 
 	return (
-		<section style={styles.detailsRow.row}>
+		<section style={inlineStyles.detailsRow.row}>
 			<span
 			className={`icon ${icon}`}
-			style={{...styles.detailsRow.icon, alignSelf: 'flex-start' }}
+			style={{...inlineStyles.detailsRow.icon, alignSelf: 'flex-start' }}
 			/>
 			<section style={{ width: '80%' }}>
-				<h2 style={styles.detailsRow.title}>
+				<h2 style={inlineStyles.detailsRow.title}>
 					{title}
 				</h2>
 				{renderSummary()}
@@ -109,7 +111,7 @@ const DetailsRow = ({ icon, title, summary }) => {
 	);
 };
 
-const styles = {
+const inlineStyles = {
 	cardHeader: {
 		display: 'flex',
 		height: '125px',

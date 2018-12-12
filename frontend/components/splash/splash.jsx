@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './splash.css';
+
 class Splash extends React.Component {
   constructor(props){
     super(props);
@@ -7,9 +9,9 @@ class Splash extends React.Component {
 
   render(){
     return (
-        <div className='splash'>
-          <div className='splash-logo-area'>
-            <img src={'./assets/an_logo/A&N_logotype_med.png'} className='splash-logo'/>
+        <div className={styles.splash}>
+          <div className={styles.splashLogoArea}>
+            <img src={'../assets/an_logo/A&N_logotype_med.png'} className={styles.splashLogo}/>
           </div>
         </div>
     );

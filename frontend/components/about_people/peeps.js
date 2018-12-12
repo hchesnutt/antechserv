@@ -1,6 +1,6 @@
 const peeps = [{
 	background: '#51A5BA',
-	imgSrc: './assets/tc_headshotphoto_2.jpg',
+	imgSrc: '../assets/tc_headshotphoto_2.jpg',
 	imgBorderColor: '#015389',
 	name: 'Thomas W. Chesnutt, Ph.D., PStat, CAP',
 	title: 'CEO',
@@ -10,7 +10,7 @@ const peeps = [{
 	role: 'Tom Chesnutt has pioneered innovative water rate reform, probability management, stochastic simulation and forecasting in the fields of water policy and economic modeling.'
 }, {
 	background: '#6BCAE2',
-	imgSrc: './assets/dp_headshotphoto_1.jpg',
+	imgSrc: '../assets/dp_headshotphoto_1.jpg',
 	imgBorderColor: '#086C32',
 	name: 'David Pekelney, Ph.D.',
 	title: 'Director of Policy Analysis',
@@ -20,7 +20,7 @@ const peeps = [{
 	role: 'David Pekelney has extensive experience analyzing financial, and economic, environmental policies in the areas of urban water conservation and planning, water recycling, and water demand using quantitative and qualitative methods.'
 }, {
 	background: '#87e293',
-	imgSrc: './assets/dh_headshot_1.jpeg',
+	imgSrc: '../assets/dh_headshot_1.jpeg',
 	imgBorderColor: '#6A067A',
 	name: 'Dana Holt, M.S.',
 	title: 'Senior Information Scientist',

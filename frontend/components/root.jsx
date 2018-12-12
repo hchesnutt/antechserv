@@ -7,13 +7,14 @@ import People from './about_people/people';
 import Pubs from './publications/pubs';
 import { StickyContainer } from 'react-sticky'
 
+import styles from './root.css';
 
 const Root = () => {
   return (
-    <section className='total-page'>
+    <section className={styles.root}>
       <StickyContainer>
-        <Splash/>
         <NavBar/>
+        <Splash/>
         <About/>
         <Clients/>
         <Pubs/>
