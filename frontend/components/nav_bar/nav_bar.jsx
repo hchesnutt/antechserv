@@ -31,6 +31,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <Sticky className={styles.navBar}>
+        <div className={styles.imageContainer}>
+          <img src={'https://s3-us-west-1.amazonaws.com/antechserv/A%26N_logo.ai'}/>
+        </div>
         <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-200} duration={500} onSetActive={this.handleSetActive}>
           <h2>About</h2>
         </Link>

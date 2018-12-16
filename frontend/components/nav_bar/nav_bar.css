@@ -5,6 +5,13 @@
 	justify-content: center;
 }
 
+.imageContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navBarText {
   height: 80px;
   width: 100%;

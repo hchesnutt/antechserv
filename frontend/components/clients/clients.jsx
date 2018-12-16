@@ -12,9 +12,11 @@ class Clients extends React.Component {
   render(){
     return(
       <Element name='clients' className={styles.clients}>
-        {clientImages.map(image => (
-          <img src={image} />
+        <div className={styles.clientsContainer}>
+          {clientImages.map(image => (
+            <img src={image} />
           ))}
+        </div>
       </Element>
     )
   }

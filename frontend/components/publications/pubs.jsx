@@ -13,13 +13,15 @@ class Pubs extends React.Component {
   render(){
     return(
       <Element name='pubs' className={styles.pubs}>
-        <ul className={styles.pubsList}>
-          {Publications.map((pubSingle, i) => (
-            <li key={i}>
-              <PubCard {...pubSingle}/>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.pubsContainer}>
+          <ul className={styles.pubsList}>
+            {Publications.map((pubSingle, i) => (
+              <li key={i}>
+                <PubCard {...pubSingle}/>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Element>
     );
   }
