@@ -1,5 +1,15 @@
-.contactFormContainer {
+.contactForm {
   padding: 10px;
   border: 1px solid red;
   width: 50%;
+}
+
+.contactFormContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.formItem {
+  
 }
