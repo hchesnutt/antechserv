@@ -12576,16 +12576,6 @@ var NavBar = function (_React$Component) {
   _createClass(NavBar, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _arguments = arguments;
-
-      _reactScroll.Events.scrollEvent.register('begin', function (to, element) {
-        console.log('begin', _arguments);
-      });
-
-      _reactScroll.Events.scrollEvent.register('end', function (to, element) {
-        console.log('end', _arguments);
-      });
-
       _reactScroll.scrollSpy.update();
     }
   }, {
@@ -12598,11 +12588,6 @@ var NavBar = function (_React$Component) {
     key: 'scrollToTop',
     value: function scrollToTop() {
       _reactScroll.animateScroll.scrollToTop();
-    }
-  }, {
-    key: 'handleSetActive',
-    value: function handleSetActive(to) {
-      console.log(to);
     }
   }, {
     key: 'componentWillUnmount',
@@ -13903,7 +13888,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, ".pubs__pubs___-83qI {\n  height: 100vh;\n  border: 1px solid red;\n}\n\n.pubs__pubsList___1vNoL {\n\tmargin: 1em auto;\n\tmax-width: 1106px;\n\ttext-align: center;\n\tdisplay: flex;\n\tflex-direction: row;\n\tflex-wrap: nowrap;\n\tjustify-content: center;\n}\n\n.pubs__pubsList___1vNoL li {\n\tdisplay: inline-block;\n\tmargin: 1em;\n}\n\n.pubs__pubsList___1vNoL img {\n\twidth: 320px;\n\tdisplay: block;\n\theight: 400px;\n\t-webkit-transition: all 500ms;\n\t-moz-transition: all 500ms;\n\ttransition: all 500ms;\n\tmax-width: 100%;\n}\n\n.pubs__pubsList___1vNoL figure {\n\theight: 400px;\n\toverflow: hidden;\n\tposition: relative;\n\twidth: 289px;\n}\n\n.pubs__pubsList___1vNoL figcaption {\n\tbackground: rgba(0,0,0,0.8);\n\tcolor: white;\n\theight: 100%;\n\tleft: 0;\n\topacity: 0;\n\tposition: absolute;\n\tright: 0;\n\ttop: 0;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.pubs__pubsList___1vNoL figcaption p {\n\tdisplay: list-item;\n\tfont-size: 1em;\n\tposition: relative;\n\ttop: -40px;\n\twidth: 269px;\n\t-webkit-transition: all 500ms ease-out;\n\t-moz-transition: all 500ms ease-out;\n\ttransition: all 500ms ease-out;\n\tvertical-align: middle;\n\tmargin-top: 5%;\n\tmargin-left: 10px;\n}\n\n.pubs__pubsList___1vNoL figcaption h4 {\n\tdisplay: list-item;\n\tfont-size: 1.2em;\n\tposition: relative;\n\ttop: -40px;\n\twidth: 269px;\n\t-webkit-transition: all 500ms ease-out;\n\t-moz-transition: all 500ms ease-out;\n\ttransition: all 500ms ease-out;\n\tvertical-align: middle;\n\tmargin-top: 5%;\n\tmargin-left: 10px;\n}\n\n.pubs__pubsList___1vNoL figcaption h4:after {\n  display: block;\n  content: '';\n  border-bottom: solid 1px #019fb6;\n  transform: scaleX(0);\n  transition: transform 500ms ease-in-out;\n\twidth: 50%;\n\tmargin-left: 25%;\n\tpadding-bottom: 5%;\n\n}\n\n\n.pubs__pubsList___1vNoL li:hover figcaption h4:after {\n\ttransform: scaleX(1);\n}\n\n.pubs__pubsList___1vNoL li:hover figcaption {\n\topacity: 1;\n}\n\n.pubs__pubsList___1vNoL li:hover img {\n\t-webkit-transform: scale(1.4);\n\t-moz-transform: scale(1.4);\n\ttransform: scale(1.4);\n}\n\n.pubs__pubsList___1vNoL li:hover figcaption p {\n\t-moz-transform: translateY(40px);\n\t-webkit-transform: translateY(40px);\n\ttransform: translateY(40px);\n}\n\n.pubs__pubsList___1vNoL li:hover figcaption h4 {\n\t-moz-transform: translateY(40px);\n\t-webkit-transform: translateY(40px);\n\ttransform: translateY(40px);\n}\n", ""]);
+exports.push([module.i, ".pubs__pubs___-83qI {\n  height: 100vh;\n  border: 1px solid red;\n  display: flex;\n  align-items: center;\n}\n\n.pubs__pubsList___1vNoL {\n  border: 1px solid red;\n\tmargin: 1em auto;\n\twidth: 100vh;\n\ttext-align: center;\n\tdisplay: flex;\n\tflex-direction: row;\n\t/* flex-wrap: nowrap; */\n\tjustify-content: flex-start;\n}\n\n.pubs__pubsList___1vNoL li {\n\t/* display: inline-block; */\n\tmargin: 1em;\n}\n\n.pubs__pubsList___1vNoL img {\n\twidth: 320px;\n\tdisplay: block;\n\theight: 400px;\n\t-webkit-transition: all 500ms;\n\t-moz-transition: all 500ms;\n\ttransition: all 500ms;\n\tmax-width: 100%;\n}\n\n.pubs__pubsList___1vNoL figure {\n\theight: 400px;\n\toverflow: hidden;\n\tposition: relative;\n\twidth: 289px;\n}\n\n.pubs__pubsList___1vNoL figcaption {\n\tbackground: rgba(0,0,0,0.8);\n\tcolor: white;\n\theight: 100%;\n\tleft: 0;\n\topacity: 0;\n\tposition: absolute;\n\tright: 0;\n\ttop: 0;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.pubs__pubsList___1vNoL figcaption p {\n\tdisplay: list-item;\n\tfont-size: 1em;\n\tposition: relative;\n\ttop: -40px;\n\twidth: 269px;\n\t-webkit-transition: all 500ms ease-out;\n\t-moz-transition: all 500ms ease-out;\n\ttransition: all 500ms ease-out;\n\tvertical-align: middle;\n\tmargin-top: 5%;\n\tmargin-left: 10px;\n}\n\n.pubs__pubsList___1vNoL figcaption h4 {\n\tdisplay: list-item;\n\tfont-size: 1.2em;\n\tposition: relative;\n\ttop: -40px;\n\twidth: 269px;\n\t-webkit-transition: all 500ms ease-out;\n\t-moz-transition: all 500ms ease-out;\n\ttransition: all 500ms ease-out;\n\tvertical-align: middle;\n\tmargin-top: 5%;\n\tmargin-left: 10px;\n}\n\n.pubs__pubsList___1vNoL figcaption h4:after {\n  display: block;\n  content: '';\n  border-bottom: solid 1px #019fb6;\n  transform: scaleX(0);\n  transition: transform 500ms ease-in-out;\n\twidth: 50%;\n\tmargin-left: 25%;\n\tpadding-bottom: 5%;\n\n}\n\n\n.pubs__pubsList___1vNoL li:hover figcaption h4:after {\n\ttransform: scaleX(1);\n}\n\n.pubs__pubsList___1vNoL li:hover figcaption {\n\topacity: 1;\n}\n\n.pubs__pubsList___1vNoL li:hover img {\n\t-webkit-transform: scale(1.4);\n\t-moz-transform: scale(1.4);\n\ttransform: scale(1.4);\n}\n\n.pubs__pubsList___1vNoL li:hover figcaption p {\n\t-moz-transform: translateY(40px);\n\t-webkit-transform: translateY(40px);\n\ttransform: translateY(40px);\n}\n\n.pubs__pubsList___1vNoL li:hover figcaption h4 {\n\t-moz-transform: translateY(40px);\n\t-webkit-transform: translateY(40px);\n\ttransform: translateY(40px);\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -13915,13 +13900,12 @@ exports.locals = {
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(247);
 exports = module.exports = __webpack_require__(14)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".root__root___1GJEJ {\n  width: 100%;\n  background-image: url(" + escape(__webpack_require__(248)) + ");\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n}", ""]);
+exports.push([module.i, ".root__root___1GJEJ {\n  width: 100%;\n  background-image: url('https://source.unsplash.com/aExT3y92x5o');\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -30227,34 +30211,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 247 */
-/***/ (function(module, exports) {
-
-module.exports = function escape(url) {
-    if (typeof url !== 'string') {
-        return url
-    }
-    // If url is already wrapped in quotes, remove them
-    if (/^['"].*['"]$/.test(url)) {
-        url = url.slice(1, -1);
-    }
-    // Should url be wrapped?
-    // See https://drafts.csswg.org/css-values-3/#urls
-    if (/["'() \t\n]/.test(url)) {
-        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
-    }
-
-    return url
-}
-
-
-/***/ }),
-/* 248 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "7183c3d8381490dfaa0f1f06304d5231.jpg";
 
 /***/ })
 /******/ ]);

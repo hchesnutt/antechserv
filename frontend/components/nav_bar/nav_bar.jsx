@@ -11,14 +11,6 @@ class NavBar extends React.Component {
   }
 
   componentDidMount(){
-    Events.scrollEvent.register('begin', (to, element) => {
-      console.log('begin', arguments);
-    });
-
-    Events.scrollEvent.register('end', (to, element) => {
-      console.log('end', arguments);
-    });
-
     scrollSpy.update();
   }
 
@@ -29,10 +21,6 @@ class NavBar extends React.Component {
 
   scrollToTop() {
     animateScroll.scrollToTop();
-  }
-
-  handleSetActive(to) {
-    console.log(to);
   }
 
   componentWillUnmount() {
