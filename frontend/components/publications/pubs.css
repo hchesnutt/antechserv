@@ -1,20 +1,23 @@
 .pubs {
   height: 100vh;
   border: 1px solid red;
+  display: flex;
+  align-items: center;
 }
 
 .pubsList {
+  border: 1px solid red;
 	margin: 1em auto;
-	max-width: 1106px;
+	width: 100vh;
 	text-align: center;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
+	/* flex-wrap: nowrap; */
+	justify-content: flex-start;
 }
 
 .pubsList li {
-	display: inline-block;
+	/* display: inline-block; */
 	margin: 1em;
 }
 
