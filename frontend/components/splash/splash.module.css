@@ -1,18 +1,170 @@
 .splash {
-	display: block;
-	height: 100vh;
+  display: flex;
+  height: calc(100vh - 72px);
+  min-height: 560px;
 }
 
-.splashLogoArea {
-	position: absolute;
-	top: 25%;
-	left: 50%;
-	margin-top: -60px;
-	margin-left: -220px;
-	z-index: 10
+/* ── Left Column ── */
+.splashLeft {
+  width: 60%;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 72px 80px 48px 80px;
+  position: relative;
 }
 
-.splashLogo {
-	height: 120px;
-	width: 445px;
+.splashContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.eyebrowRule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--accent-gold);
+}
+
+.eyebrowText {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.headlineItalic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold);
+}
+
+.subheadline {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.tagDot {
+  color: var(--border-medium);
+  font-size: 0.9rem;
+}
+
+.scrollCue {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.scrollCue:hover {
+  opacity: 0.9;
+}
+
+.scrollLabel {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.scrollArrow {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  animation: scrollBob 2s ease-in-out infinite;
+}
+
+@keyframes scrollBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ── Right Column ── */
+.splashRight {
+  width: 40%;
+  background-color: var(--bg-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 60px;
+}
+
+.splashRightInner {
+  max-width: 340px;
+}
+
+.rightQuote {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(247, 242, 233, 0.9);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.rightAttrib {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(247, 242, 233, 0.5);
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+.rightDivider {
+  width: 40px;
+  height: 1px;
+  background-color: rgba(184, 134, 11, 0.6);
+  margin-bottom: 32px;
+}
+
+.rightDesc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(247, 242, 233, 0.65);
+  line-height: 1.75;
 }

@@ -28,30 +28,34 @@ class NavBar extends React.Component {
       <Sticky>
         {({ style }) => (
           <div style={style} className={styles.navBar}>
-            <div className={styles.imageContainer}>
-              <img src={'https://s3-us-west-1.amazonaws.com/antechserv/A%26N_logo.ai'}/>
+            <div className={styles.logoArea} onClick={this.scrollToTop}>
+              <div className={styles.logoMark}>
+                <div>
+                  <span className={styles.logoText}>A &amp; N Technical Services</span>
+                  <span className={styles.logoSub}>Water Policy &amp; Empirical Analysis</span>
+                </div>
+              </div>
             </div>
-            <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-200} duration={500} onSetActive={this.handleSetActive}>
-              <h2>About</h2>
-            </Link>
-            {/* <Link activeClass="navActive" className={styles.navBarText} to="clients" spy={true} smooth={true} offset={-200} duration={500}>
-              <h2>Clients</h2>
-            </Link> */}
-            <Link activeClass="navActive" className={styles.navBarText} to="pubs" spy={true} smooth={true} offset={-200} duration={500}>
-              <h2>Publications</h2>
-            </Link>
-            {/* <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-200} duration={500}>
-              <h2>People</h2>
-            </Link> */}
-            <Link activeClass="navActive" className={styles.navBarText} to="contact" spy={true} smooth={true} offset={0} duration={500}>
-              <h2>Contact Us</h2>
-            </Link>
+
+            <nav className={styles.navLinks}>
+              <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-72} duration={600}>
+                <h2>About</h2>
+              </Link>
+              <Link activeClass="navActive" className={styles.navBarText} to="pubs" spy={true} smooth={true} offset={-72} duration={600}>
+                <h2>Publications</h2>
+              </Link>
+              <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-72} duration={600}>
+                <h2>Team</h2>
+              </Link>
+              <Link activeClass="navActive" className={styles.navBarText} to="contact" spy={true} smooth={true} offset={0} duration={600}>
+                <h2>Contact</h2>
+              </Link>
+            </nav>
           </div>
         )}
       </Sticky>
     );
   }
-};
-
+}
 
 export default NavBar;

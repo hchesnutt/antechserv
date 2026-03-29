@@ -1,24 +1,141 @@
 .about {
-	height: 100vh;
+  background-color: var(--bg-secondary);
+  padding: 100px 80px 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Section Header ── */
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 72px;
+  position: relative;
+}
+
+.sectionNumber {
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  opacity: var(--section-num-opacity);
+  line-height: 1;
+  position: absolute;
+  top: -60px;
+  left: -12px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+  margin-left: 0;
+  padding-bottom: 4px;
+}
+
+.sectionRule {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background-color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.sectionLabelText {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-style: italic;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+/* ── Two-Column Body ── */
+.aboutBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.aboutLeft {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  gap: 36px;
+}
+
+.aboutHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.aboutHeadline em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-green);
+}
+
+.pullQuote {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  padding-left: 24px;
+  border-left: 3px solid var(--accent-green);
+  margin: 0;
+}
+
+.aboutRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
 }
 
 .aboutText {
-  padding: 10px;
-  padding-bottom: 5%;
-  font-size: 30px;
-  text-align: center;  
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
 
-.splashLogoArea {
-  z-index: 10;
+/* ── Specs Row ── */
+.specs {
   display: flex;
-  justify-content: center;
+  gap: 48px;
+  margin-top: 20px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
 }
 
-.splashLogo {
-	max-width: 55%;
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.specNumber {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  line-height: 1;
+}
+
+.specLabel {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
 }

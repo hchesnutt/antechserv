@@ -1,23 +1,26 @@
 import React from 'react';
+import styles from './pubs.module.css';
 
-class PubCard extends React.Component {
-  constructor(props){
-    super(props);
-  }
+const PubCard = ({ link_url, image, header, text, index }) => {
+  return (
+    <article className={styles.pubRow}>
+      <span className={styles.pubIndex}>{String(index).padStart(2, '0')}</span>
 
-  render(){
-    return(
-      <a href={this.props.link_url}>
-        <figure>
-          <img src={this.props.image}/>
-          <figcaption>
-            <h4>{this.props.header}</h4>
-            <p>{this.props.text}</p>
-          </figcaption>
-        </figure>
+      <a href={link_url} className={styles.pubImageWrap} target="_blank" rel="noopener noreferrer">
+        <img src={image} alt={header} className={styles.pubImage} />
       </a>
-    )
-  }
+
+      <div className={styles.pubContent}>
+        <a href={link_url} target="_blank" rel="noopener noreferrer" className={styles.pubLink}>
+          <h3 className={styles.pubTitle}>{header}</h3>
+        </a>
+        <p className={styles.pubExcerpt}>{text}</p>
+        <a href={link_url} target="_blank" rel="noopener noreferrer" className={styles.readMore}>
+          Read More &rarr;
+        </a>
+      </div>
+    </article>
+  );
 };
 
 export default PubCard;

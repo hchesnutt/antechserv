@@ -1,162 +1,74 @@
 import React from 'react';
-import peeps from './peeps';
-import Particles from 'react-particles-js';
-import Params from './params.json';
-import { CardStack, Card } from 'react-cardstack';
 import { Element } from 'react-scroll';
-
 import styles from './people.module.css';
 
+import tcPhoto from '../../../assets/tc_headshotphoto_2.jpg';
+import dpPhoto from '../../../assets/dp_headshotphoto_1.jpg';
+import dhPhoto from '../../../assets/dh_headshotphoto_1.jpg';
 
-class People extends React.Component {
-  constructor(props){
-    super(props)
-  }
+const teamMembers = [
+  {
+    photo: tcPhoto,
+    name: 'Thomas Chesnutt',
+    credentials: 'Ph.D.',
+    title: 'Principal',
+    location: 'California',
+    bio: 'Thomas leads the firm\'s empirical policy research, specializing in water use efficiency benchmarking, rate structure design, and demand forecasting for municipal water utilities.',
+  },
+  {
+    photo: dpPhoto,
+    name: 'David Perez',
+    credentials: 'M.S.',
+    title: 'Senior Associate',
+    location: 'California',
+    bio: 'David brings expertise in financial modeling and cost-of-service analysis, with a track record of developing conservation programs and rate structures for agencies throughout the Western United States.',
+  },
+  {
+    photo: dhPhoto,
+    name: 'Dana Haasz',
+    credentials: 'M.P.P.',
+    title: 'Policy Analyst',
+    location: 'California',
+    bio: 'Dana focuses on the intersection of policy and data, developing regulatory frameworks and legislative analysis that guide efficient and equitable water governance.',
+  },
+];
 
-  render(){
-    return(
-        <Element name='people' className={styles.peopleBox}>
-          <section className={styles.fill}>
-            <h4 className={styles.peopleQuote}>Nothing is so difficult as not deceiving oneself. - Ludwig Wittgenstein </h4>
-            <Particles params={Params} className={styles.particles}/>
-          </section>
-          <section className={styles.cardStack}>
-            <CardStack
-              height={400}
-              width={450}
-              background="#f8f8f8"
-              hoverOffset={25}>
+const People = () => {
+  return (
+    <Element name='people'>
+      <section className={styles.people}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionNumber}>03</span>
+          <div className={styles.sectionLabel}>
+            <span className={styles.sectionRule}></span>
+            <span className={styles.sectionLabelText}>Our Team</span>
+          </div>
+        </div>
 
-              {peeps.map((person, i) =>
-                <Card
-                  key={i}
-                  background={person.background}>
-                  <TeamMemberCard {...person}/>
-                </Card>
-              )}
-            </CardStack>
-          </section>
-        </Element>
-    )
-  }
-};
-
-const TeamMemberCard = (props) => (
-  <section style={{ position: 'absolute', top: 0 }} onClick={props.onClick}>
-    <header style={inlineStyles.cardHeader} className={styles.cardHeaderDetails}>
-      <ProfilePicture imgSrc={props.imgSrc} borderColor={props.imgBorderColor} />
-      <section>
-        <h1 style={inlineStyles.headerName}>{props.name}</h1>
-        <h3 style={inlineStyles.headerTitle} className={[styles.icon, styles.ionIosArrowDown]}>{props.title}</h3>
+        <div className={styles.peopleInner}>
+          <div className={styles.grid}>
+            {teamMembers.map((person, i) => (
+              <div className={styles.card} key={i}>
+                <div className={styles.photoWrap}>
+                  <img src={person.photo} alt={person.name} className={styles.photo} />
+                </div>
+                <div className={styles.cardBody}>
+                  <div className={styles.nameRow}>
+                    <h3 className={styles.name}>{person.name}</h3>
+                    <span className={styles.credentials}>{person.credentials}</span>
+                  </div>
+                  <p className={styles.title}>{person.title}</p>
+                  <p className={styles.location}>{person.location}</p>
+                  <div className={styles.cardDivider}></div>
+                  <p className={styles.bio}>{person.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
-    </header>
-
-    <section style={{color: '#000000'}}>
-      <section style={{display: 'flex'}}>
-        <DetailsRow
-          icon='ion-ios-telephone-outline'
-          title={props.mobileNo}
-          />
-
-        <DetailsRow
-          icon='ion-ios-location-outline'
-          title={props.location}
-          />
-      </section>
-
-      <DetailsRow
-        icon='icon ion-ios-paper-outline'
-        title='About'
-        summary={props.role}
-        />
-    </section>
-  </section>
-);
-
-const ProfilePicture = ({ imgSrc, borderColor }) => (
-	<img
-		style={{
-			width: '60px',
-			height: '60px',
-			borderRadius: '100%',
-			border: `3px solid ${borderColor}`,
-		}}
-		src={imgSrc}
-	/>
-);
-
-const DetailsRow = ({ icon, title, summary }) => {
-	const renderSummary = () => {
-		if (summary) return (
-			<p style={{ fontWeight: 300, lineHeight: 1.45}}>
-				{summary}
-			</p>
-		);
-		return null;
-	};
-
-	return (
-		<section style={inlineStyles.detailsRow.row}>
-			<span
-			className={`icon ${icon}`}
-			style={{...inlineStyles.detailsRow.icon, alignSelf: 'flex-start' }}
-			/>
-			<section style={{ width: '80%' }}>
-				<h2 style={inlineStyles.detailsRow.title}>
-					{title}
-				</h2>
-				{renderSummary()}
-			</section>
-		</section>
-	);
-};
-
-const inlineStyles = {
-	cardHeader: {
-		display: 'flex',
-		height: '125px',
-		justifyContent: 'space-between',
-		alignItems: 'center',
-		padding: '10px 20px',
-		color: '#000000',
-	},
-	headerName: {
-		margin: 0,
-		fontWeight: 500,
-		fontSize: '25px',
-		textAlign: 'right'
-	},
-	headerTitle: {
-		margin: '4px 0 0',
-		fontWeight: 300,
-		fontSize: '17px',
-		opacity: 0.8,
-		textAlign: 'right'
-	},
-	detailsRow: {
-		row: {
-			width: '100%',
-			padding: '0 20px',
-			display: 'flex',
-			alignItems: 'center',
-			margin: '10px 0',
-		},
-		icon: {
-			display: 'block',
-			width: '25px',
-			height: '30px',
-			margin: '0 20px 0 0',
-			borderBottom: '1px solid rgba(255, 255, 255, 0.8)',
-			textAlign: 'center',
-			fontSize: '22px',
-		},
-		title: {
-			fontWeight: 500,
-			fontSize: '20px',
-			margin: 0,
-			fontStyle: 'italic',
-		},
-	},
+    </Element>
+  );
 };
 
 export default People;
