@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Element } from 'react-scroll';
 
-import styles from './Contact.css';
+import styles from './Contact.module.css';
 import ContactAbout from './ContactAbout/ContactAbout';
 import ContactForm from './ContactForm/ContactForm';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Element } from 'react-scroll';
 
-import styles from './about.css';
+import styles from './about.module.css';
 
 class About extends React.Component {
   constructor(props){

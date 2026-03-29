@@ -5,7 +5,7 @@ import Params from './params.json';
 import { CardStack, Card } from 'react-cardstack';
 import { Element } from 'react-scroll';
 
-import styles from './people.css';
+import styles from './people.module.css';
 
 
 class People extends React.Component {

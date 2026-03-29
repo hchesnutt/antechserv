@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import styles from './ContactForm.css';
-import { contactFormAddress } from '../../../../config';
+import styles from './ContactForm.module.css';
+import config from '../../../../config';
+const { contactFormAddress } = config;
 
 
 class contactForm extends Component {

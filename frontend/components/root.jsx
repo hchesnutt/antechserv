@@ -5,10 +5,10 @@ import { StickyContainer } from 'react-sticky'
 import NavBar from './nav_bar/nav_bar';
 import About from './about/about';
 // import Clients from './clients/clients';
-import People from './about_people/people';
+// import People from './about_people/people';
 import Pubs from './publications/pubs';
 import Contact from './contact/Contact.jsx';
-import styles from './root.css';
+import styles from './root.module.css';
 
 
 const Root = () => {

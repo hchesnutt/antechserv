@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './splash.css';
+import styles from './splash.module.css';
 
 class Splash extends React.Component {
   constructor(props){

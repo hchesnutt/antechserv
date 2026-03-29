@@ -1,7 +1,7 @@
 import React from 'react';
 import { Element } from 'react-scroll';
 
-import styles from './clients.css';
+import styles from './clients.module.css';
 import clientImages from '../../../assets/clients';
 
 class Clients extends React.Component {

@@ -3,7 +3,7 @@ import PubCard from './pub_card';
 import Publications from './publications';
 import { Element } from 'react-scroll';
 
-import styles from './pubs.css';
+import styles from './pubs.module.css';
 
 class Pubs extends React.Component {
   constructor(props){

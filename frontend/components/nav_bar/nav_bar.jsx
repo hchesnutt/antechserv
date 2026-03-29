@@ -2,7 +2,7 @@ import React from 'react';
 import { Sticky } from 'react-sticky';
 import { Link, Events, animateScroll, scrollSpy } from 'react-scroll';
 
-import styles from './nav_bar.css';
+import styles from './nav_bar.module.css';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -12,11 +12,6 @@ class NavBar extends React.Component {
 
   componentDidMount(){
     scrollSpy.update();
-  }
-
-  componentWillUnmount() {
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
   }
 
   scrollToTop() {
