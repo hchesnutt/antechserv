@@ -10,43 +10,47 @@ class Splash extends React.Component {
   render(){
     return (
       <div className={styles.splash}>
-        <div className={styles.radialGlow}></div>
-        <div className={styles.gridOverlay}></div>
+        {/* Left dark visual panel */}
+        <div className={styles.leftPanel}>
+          <span className={styles.bgLetters}>A&amp;N</span>
+          <div className={styles.terrain3}></div>
+          <div className={styles.terrain2}></div>
+          <div className={styles.terrain1}></div>
+        </div>
 
-        <div className={styles.content}>
+        {/* Right content panel */}
+        <div className={styles.rightPanel}>
           <div className={styles.eyebrow}>
             <span className={styles.eyebrowLine}></span>
             <span className={styles.eyebrowText}>A &amp; N Technical Services Inc.</span>
           </div>
 
           <h1 className={styles.headline}>
-            <span className={styles.headlineTop}>Empirical Policy</span>
-            <span className={styles.headlineBottom}>
-              Analysis<span className={styles.accentDot}>.</span>
-            </span>
+            <span className={styles.headlinePlain}>Empirical</span>
+            <em className={styles.headlineAccent}>Policy</em>
+            <span className={styles.headlinePlain}>Analysis.</span>
           </h1>
 
           <p className={styles.subheadline}>
-            National consulting firm specializing in water resources,<br/>
+            National consulting firm specializing in water resources,
             financial expertise, and water efficiency programs.
           </p>
 
-          <div className={styles.statsRow}>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>30<span className={styles.statSuffix}>+</span></span>
-              <span className={styles.statLabel}>Years of Experience</span>
+          <div className={styles.pillsRow}>
+            <div className={styles.pill}>
+              <span className={styles.pillNum}>30+</span>
+              <span className={styles.pillLabel}>Years of Experience</span>
             </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>100K<span className={styles.statSuffix}>+</span></span>
-              <span className={styles.statLabel}>Customers Served</span>
+            <div className={styles.pill}>
+              <span className={styles.pillNum}>100K+</span>
+              <span className={styles.pillLabel}>Customers Served</span>
             </div>
           </div>
-        </div>
 
-        <div className={styles.scrollIndicator}>
-          <span className={styles.scrollLabel}>Scroll</span>
-          <div className={styles.scrollBar}></div>
+          <div className={styles.scrollIndicator}>
+            <span className={styles.scrollLabel}>Scroll</span>
+            <div className={styles.scrollBar}></div>
+          </div>
         </div>
       </div>
     );

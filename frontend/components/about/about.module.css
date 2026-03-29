@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   padding: 80px 24px;
 }
 
@@ -26,17 +26,33 @@
 }
 
 .logoWrap {
+  position: relative;
   padding: 32px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent-teal);
-  border-radius: 4px;
+  border-radius: 3px;
+}
+
+/* Terracotta decorative circle behind logo */
+.logoWrap::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent-terra);
+  opacity: 0.18;
+  pointer-events: none;
 }
 
 .logo {
   width: 100%;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  filter: brightness(0);
+  opacity: 0.75;
+  position: relative;
+  z-index: 1;
 }
 
 .tagline {
@@ -44,13 +60,13 @@
   flex-direction: column;
   gap: 4px;
   padding-left: 16px;
-  border-left: 1px solid var(--border);
+  border-left: 2px solid var(--accent-terra);
 }
 
 .taglineLabel {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -81,24 +97,24 @@
   display: block;
   width: 24px;
   height: 1px;
-  background: var(--accent-teal);
+  background: var(--accent-terra);
 }
 
 .labelText {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent-teal);
+  color: var(--accent-terra);
 }
 
 .heading {
-  font-family: var(--font-sans);
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 300;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
   max-width: 560px;
 }
@@ -115,7 +131,7 @@
 .highlights {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -131,14 +147,15 @@
   color: var(--text-secondary);
 }
 
-/* Teal diamond icon */
+/* Terracotta diamond icon */
 .diamond {
   display: inline-block;
   width: 7px;
   height: 7px;
-  background: var(--accent-teal);
+  background: var(--accent-terra);
   transform: rotate(45deg);
   flex-shrink: 0;
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {

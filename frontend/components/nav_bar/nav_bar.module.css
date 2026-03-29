@@ -1,9 +1,7 @@
 .navBar {
   z-index: 1000;
-  background-color: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-dark);
+  border-bottom: 2px solid var(--accent-terra);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,14 +26,14 @@
 .navBarText {
   height: 64px;
   line-height: 64px;
-  padding: 0 24px;
+  padding: 0 22px;
   text-align: center;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -45,13 +43,13 @@
 }
 
 .navBarText:hover {
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .navBarText h2 {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }

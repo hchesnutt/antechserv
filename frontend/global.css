@@ -1,18 +1,18 @@
 :root {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --accent-teal: #2dd4bf;
-  --accent-teal-dim: rgba(45, 212, 191, 0.15);
-  --accent-teal-glow: rgba(45, 212, 191, 0.25);
-  --accent-gold: #fbbf24;
-  --border: rgba(45, 212, 191, 0.15);
-  --border-bright: rgba(45, 212, 191, 0.4);
-  --font-sans: 'DM Sans', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --bg-primary: #f5ede0;
+  --bg-secondary: #ede3d2;
+  --bg-dark: #2c1f14;
+  --bg-card: #fff9f2;
+  --text-primary: #2c1f14;
+  --text-secondary: #5a4535;
+  --text-muted: #9a7e6a;
+  --accent-sage: #4a6741;
+  --accent-terra: #b85c38;
+  --accent-sand: #d4a96a;
+  --border: rgba(44, 31, 20, 0.12);
+  --border-mid: rgba(44, 31, 20, 0.2);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Nunito Sans', sans-serif;
 }
 
 *, *::before, *::after {
@@ -29,19 +29,31 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.022;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-teal);
+  background: var(--accent-sand);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5eead4;
+  background: var(--accent-terra);
 }
 
 html, body, section, span, applet, object, iframe,
@@ -69,8 +81,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: var(--font-sans);
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-weight: 400;
 }
 
 article, aside, details, figcaption, figure,
@@ -99,6 +111,6 @@ table {
 
 /* react-scroll active nav link class (applied as global class) */
 .navActive {
-  color: var(--accent-teal) !important;
-  border-bottom: 2px solid var(--accent-teal) !important;
+  color: var(--accent-sand) !important;
+  border-bottom: 2px solid var(--accent-sand) !important;
 }

@@ -12,39 +12,38 @@ class PubCard extends React.Component {
           position: 'relative',
           height: '420px',
           overflow: 'hidden',
-          borderRadius: '4px',
-          border: '1px solid rgba(45, 212, 191, 0.15)',
-          background: '#1e293b',
+          borderRadius: '3px',
+          border: '1px solid rgba(44, 31, 20, 0.14)',
+          background: '#fff9f2',
           cursor: 'pointer',
           transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
         }}
           onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'rgba(45, 212, 191, 0.5)';
-            e.currentTarget.style.boxShadow = '0 0 32px rgba(45, 212, 191, 0.15)';
+            e.currentTarget.style.borderColor = 'rgba(184, 92, 56, 0.45)';
+            e.currentTarget.style.boxShadow = '0 4px 28px rgba(184, 92, 56, 0.12)';
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'rgba(45, 212, 191, 0.15)';
+            e.currentTarget.style.borderColor = 'rgba(44, 31, 20, 0.14)';
             e.currentTarget.style.boxShadow = 'none';
           }}
         >
-          {/* Publication type label */}
+          {/* "Report" badge — top right, terracotta */}
           <div style={{
             position: 'absolute',
             top: '16px',
-            left: '16px',
+            right: '16px',
             zIndex: 3,
-            fontFamily: 'var(--font-mono)',
+            fontFamily: "'Nunito Sans', sans-serif",
             fontSize: '9px',
-            fontWeight: 500,
-            letterSpacing: '0.18em',
+            fontWeight: 600,
+            letterSpacing: '0.16em',
             textTransform: 'uppercase',
-            color: 'var(--accent-teal)',
-            background: 'rgba(15, 23, 42, 0.8)',
+            color: '#fff9f2',
+            background: '#b85c38',
             padding: '4px 10px',
             borderRadius: '2px',
-            border: '1px solid rgba(45, 212, 191, 0.2)',
           }}>
-            Publication
+            Report
           </div>
 
           <img
@@ -67,7 +66,7 @@ class PubCard extends React.Component {
             left: 0,
             right: 0,
             height: '80px',
-            background: 'linear-gradient(to bottom, transparent, #1e293b)',
+            background: 'linear-gradient(to bottom, transparent, #fff9f2)',
             pointerEvents: 'none',
           }}/>
 
@@ -75,14 +74,14 @@ class PubCard extends React.Component {
             padding: '20px 20px 24px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
+            gap: '10px',
           }}>
             <h4 style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '14px',
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: '18px',
               fontWeight: 500,
-              lineHeight: 1.4,
-              color: 'var(--text-primary)',
+              lineHeight: 1.35,
+              color: '#2c1f14',
               display: '-webkit-box',
               WebkitLineClamp: 3,
               WebkitBoxOrient: 'vertical',
@@ -91,11 +90,11 @@ class PubCard extends React.Component {
               {this.props.header}
             </h4>
             <p style={{
-              fontFamily: 'var(--font-sans)',
+              fontFamily: "'Nunito Sans', sans-serif",
               fontSize: '12px',
               fontWeight: 300,
               lineHeight: 1.6,
-              color: 'var(--text-muted)',
+              color: '#9a7e6a',
               display: '-webkit-box',
               WebkitLineClamp: 3,
               WebkitBoxOrient: 'vertical',
@@ -103,6 +102,16 @@ class PubCard extends React.Component {
             }}>
               {this.props.text}
             </p>
+            <span style={{
+              fontFamily: "'Nunito Sans', sans-serif",
+              fontSize: '11px',
+              fontWeight: 600,
+              letterSpacing: '0.06em',
+              color: '#4a6741',
+              marginTop: '2px',
+            }}>
+              Read Report →
+            </span>
           </figcaption>
         </figure>
       </a>

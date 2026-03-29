@@ -1,184 +1,178 @@
 .splash {
-  position: relative;
+  display: flex;
   height: 100vh;
   min-height: 640px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-primary);
   overflow: hidden;
 }
 
-/* Radial teal glow */
-.radialGlow {
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 600px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(45, 212, 191, 0.12) 0%,
-    rgba(45, 212, 191, 0.04) 45%,
-    transparent 70%
-  );
-  pointer-events: none;
-}
-
-/* Subtle dot grid */
-.gridOverlay {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(45, 212, 191, 0.12) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 80%);
-  pointer-events: none;
-}
-
-.content {
+/* ─── Left dark panel ─────────────────────────── */
+.leftPanel {
   position: relative;
-  z-index: 2;
+  flex: 0 0 45%;
+  background-color: var(--bg-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Giant faint "A&N" watermark */
+.bgLetters {
+  font-family: var(--font-serif);
+  font-size: clamp(120px, 18vw, 220px);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.05);
+  letter-spacing: -0.04em;
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Layered terrain shapes */
+.terrain1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52%;
+  background: var(--accent-sage);
+  opacity: 0.72;
+  clip-path: polygon(0 55%, 12% 38%, 26% 52%, 44% 28%, 62% 44%, 78% 22%, 92% 36%, 100% 28%, 100% 100%, 0 100%);
+}
+
+.terrain2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36%;
+  background: var(--accent-terra);
+  opacity: 0.65;
+  clip-path: polygon(0 48%, 18% 28%, 36% 46%, 55% 18%, 72% 38%, 88% 24%, 100% 34%, 100% 100%, 0 100%);
+}
+
+.terrain3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 22%;
+  background: var(--accent-sand);
+  opacity: 0.55;
+  clip-path: polygon(0 38%, 22% 58%, 46% 28%, 68% 48%, 88% 32%, 100% 42%, 100% 100%, 0 100%);
+}
+
+/* ─── Right warm panel ───────────────────────── */
+.rightPanel {
+  flex: 0 0 55%;
+  background-color: var(--bg-primary);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 24px;
-  max-width: 900px;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  justify-content: center;
+  padding: 80px 64px 80px 72px;
+  position: relative;
+  animation: fadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  gap: 14px;
+  margin-bottom: 36px;
 }
 
 .eyebrowLine {
   display: block;
-  width: 32px;
+  width: 28px;
   height: 1px;
-  background: var(--accent-teal);
+  background: var(--accent-terra);
+  flex-shrink: 0;
 }
 
 .eyebrowText {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-teal);
+  color: var(--accent-terra);
 }
 
+/* Headline */
 .headline {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0;
-  margin-bottom: 24px;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  margin-bottom: 28px;
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 7vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
 }
 
-.headlineTop {
-  font-family: var(--font-sans);
-  font-size: clamp(52px, 8vw, 96px);
+.headlinePlain {
+  font-family: var(--font-serif);
   font-weight: 300;
-  line-height: 1;
-  letter-spacing: -0.03em;
   color: var(--text-primary);
 }
 
-.headlineBottom {
-  font-family: var(--font-sans);
-  font-size: clamp(52px, 8vw, 96px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.accentDot {
-  color: var(--accent-teal);
+.headlineAccent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-terra);
 }
 
 .subheadline {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--text-secondary);
-  margin-bottom: 64px;
-  max-width: 520px;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  max-width: 420px;
+  margin-bottom: 48px;
 }
 
-/* Stats row */
-.statsRow {
+/* Pills row */
+.pillsRow {
   display: flex;
-  align-items: center;
-  gap: 0;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: rgba(30, 41, 59, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  overflow: hidden;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.stat {
+.pill {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 28px 48px;
-  gap: 6px;
+  gap: 4px;
+  padding: 18px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-mid);
+  border-left: 3px solid var(--accent-terra);
+  border-radius: 3px;
 }
 
-.statNumber {
-  font-family: var(--font-mono);
-  font-size: 48px;
-  font-weight: 600;
+.pillNum {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 500;
   line-height: 1;
-  color: var(--accent-teal);
+  color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
-.statSuffix {
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--accent-teal);
-  opacity: 0.7;
-}
-
-.statLabel {
-  font-family: var(--font-mono);
+.pillLabel {
+  font-family: var(--font-sans);
   font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
-}
-
-.statDivider {
-  width: 1px;
-  height: 60px;
-  background: var(--border);
-  flex-shrink: 0;
 }
 
 /* Scroll indicator */
@@ -191,14 +185,12 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  z-index: 2;
-  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
 }
 
 .scrollLabel {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 9px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -207,11 +199,24 @@
 .scrollBar {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, var(--accent-teal), transparent);
+  background: linear-gradient(to bottom, var(--accent-terra), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(1.1); }
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .splash {
+    flex-direction: column;
+  }
+  .leftPanel {
+    flex: 0 0 240px;
+  }
+  .rightPanel {
+    flex: 1;
+    padding: 48px 32px;
+  }
 }
