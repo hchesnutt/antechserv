@@ -6,16 +6,18 @@ import ContactAbout from './ContactAbout/ContactAbout';
 import ContactForm from './ContactForm/ContactForm';
 
 class Contact extends Component {
-  render() { 
+  render() {
     return (
       <Element name={'contact'}>
         <div className={styles.contactContainer}>
-          <ContactAbout />
-          <ContactForm />
+          <div className={styles.contactInner}>
+            <ContactAbout />
+            <ContactForm />
+          </div>
         </div>
       </Element>
     );
   }
 }
- 
+
 export default Contact;

@@ -25,6 +25,7 @@ class contactForm extends Component {
   render() {
     return (
       <section className={styles.contactForm}>
+        <p className={styles.formHeading}>Send a message</p>
         <div className={styles.contactFormContainer}>
           <input
             className={styles.formItem}

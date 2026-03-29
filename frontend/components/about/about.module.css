@@ -1,24 +1,152 @@
 .about {
-	height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  padding: 80px 24px;
+}
+
+.inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Left column */
+.leftCol {
+  flex-shrink: 0;
+  width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  gap: 32px;
+  padding-top: 8px;
 }
 
-.aboutText {
-  padding: 10px;
-  padding-bottom: 5%;
-  font-size: 30px;
-  text-align: center;  
+.logoWrap {
+  padding: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-teal);
+  border-radius: 4px;
 }
 
-.splashLogoArea {
-  z-index: 10;
+.logo {
+  width: 100%;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.tagline {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
 }
 
-.splashLogo {
-	max-width: 55%;
+.taglineLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.taglineValue {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Right column */
+.rightCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.labelLine {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent-teal);
+}
+
+.labelText {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+}
+
+.heading {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  max-width: 560px;
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Teal diamond icon */
+.diamond {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent-teal);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .leftCol {
+    width: 100%;
+  }
 }

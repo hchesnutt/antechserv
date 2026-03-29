@@ -1,36 +1,57 @@
 .navBar {
-	z-index: 1000;
-	background-color: #333;
-	display: flex;
-	justify-content: center;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .imageContainer {
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.imageContainer img {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 
 .navBarText {
-  height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
+  height: 64px;
+  line-height: 64px;
+  padding: 0 24px;
   text-align: center;
-  color: white;
-	cursor: pointer;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
 }
 
-.navActive {
-	height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-	cursor: pointer;
-	color: white;
-	border-bottom: solid 5px #019fb6;
+.navBarText:hover {
+  color: var(--text-primary);
+}
+
+.navBarText h2 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
