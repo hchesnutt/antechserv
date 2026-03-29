@@ -41,11 +41,6 @@ class Splash extends React.Component {
               <span className={styles.statNumber}>100K<span className={styles.statSuffix}>+</span></span>
               <span className={styles.statLabel}>Customers Served</span>
             </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>3</span>
-              <span className={styles.statLabel}>Published Reports</span>
-            </div>
           </div>
         </div>
 

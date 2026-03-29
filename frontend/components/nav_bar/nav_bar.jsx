@@ -40,9 +40,9 @@ class NavBar extends React.Component {
             <Link activeClass="navActive" className={styles.navBarText} to="pubs" spy={true} smooth={true} offset={-200} duration={500}>
               <h2>Publications</h2>
             </Link>
-            {/* <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-200} duration={500}>
+            <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-200} duration={500}>
               <h2>People</h2>
-            </Link> */}
+            </Link>
             <Link activeClass="navActive" className={styles.navBarText} to="contact" spy={true} smooth={true} offset={0} duration={500}>
               <h2>Contact Us</h2>
             </Link>
