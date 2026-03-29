@@ -1,5 +1,62 @@
-.contactAboutContainer {
-  padding: 10px;
-  border: 1px solid red;
-  width: 50%;
+.container {
+  padding-top: 8px;
+}
+
+.label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #00c8e8;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #e8f4f8;
+  letter-spacing: -0.02em;
+}
+
+.rule {
+  width: 48px;
+  height: 2px;
+  background-color: #00c8e8;
+  margin: 20px 0 28px;
+}
+
+.description {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #8bafc4;
+  margin-bottom: 40px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(0, 200, 232, 0.25);
+}
+
+.detailLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: #4a6b80;
+  text-transform: uppercase;
+}
+
+.detailValue {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 14px;
+  color: #e8f4f8;
 }

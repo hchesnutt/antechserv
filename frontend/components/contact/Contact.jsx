@@ -10,8 +10,10 @@ class Contact extends Component {
     return (
       <Element name={'contact'}>
         <div className={styles.contactContainer}>
-          <ContactAbout />
-          <ContactForm />
+          <div className={styles.inner}>
+            <ContactAbout />
+            <ContactForm />
+          </div>
         </div>
       </Element>
     );

@@ -1,38 +1,155 @@
-.peopleBox {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.people {
+  padding: 100px 60px;
+  background-color: #0d1528;
 }
 
-.fill {
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 56px;
+}
+
+.label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #00c8e8;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #e8f4f8;
+  letter-spacing: -0.02em;
+}
+
+.rule {
+  width: 48px;
+  height: 2px;
+  background-color: #00c8e8;
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background-color: #111e35;
+  border: 1px solid rgba(0, 200, 232, 0.15);
+  border-top: 3px solid #00c8e8;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 200, 232, 0.2);
+}
+
+.photoWrap {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.photo {
   width: 100%;
-	height: 400px;
-	position: relative;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
 }
 
-.peopleQuote {
+.card:hover .photo {
+  transform: scale(1.04);
+}
+
+.photoOverlay {
   position: absolute;
-	top: 200px;
-	left: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #111e35);
 }
 
-.particles {
-  height: 400px;
+.body {
+  padding: 24px;
 }
 
-.cardStack {
-  display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Open Sans';
+.titleTag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f0a500;
+  border: 1px solid rgba(240, 165, 0, 0.3);
+  padding: 3px 8px;
+  margin-bottom: 12px;
 }
 
-.cardHeaderDetails .icon::before {
-	position: relative;
-  right: 7px;
-  top: 1px;
+.name {
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e8f4f8;
+  margin-bottom: 4px;
+  line-height: 1.3;
 }
 
-/* icon
-ion-ios-arrow-down
-icon * */
+.credentials {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #00c8e8;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.location {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: #4a6b80;
+  margin-bottom: 16px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 200, 232, 0.12);
+  margin-bottom: 16px;
+}
+
+.role {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #8bafc4;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .people {
+    padding: 60px 24px;
+  }
+}

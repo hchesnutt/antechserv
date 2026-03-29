@@ -1,36 +1,52 @@
 .navBar {
-	z-index: 1000;
-	background-color: #333;
-	display: flex;
-	justify-content: center;
+  background-color: #0a1020;
+  border-bottom: 1px solid rgba(0, 200, 232, 0.3);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 64px;
+  z-index: 1000;
 }
 
 .imageContainer {
-  background-color: white;
+  flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.navBarText {
-  height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-  color: white;
-	cursor: pointer;
+.imageContainer img {
+  height: 36px;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
-.navActive {
-	height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-	cursor: pointer;
-	color: white;
-	border-bottom: solid 5px #019fb6;
+.navLinks {
+  display: flex;
+  gap: 0;
+}
+
+.navBarText {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8bafc4;
+  padding: 0 18px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navBarText:hover {
+  color: #00c8e8;
+}
+
+:global(.navActive) {
+  color: #00c8e8 !important;
+  border-bottom: 2px solid #00c8e8 !important;
 }

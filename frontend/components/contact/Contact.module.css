@@ -1,5 +1,25 @@
 .contactContainer {
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
+  padding: 100px 60px;
+  background-color: #070c1a;
+  border-top: 1px solid rgba(0, 200, 232, 0.15);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contactContainer {
+    padding: 60px 24px;
+  }
 }
