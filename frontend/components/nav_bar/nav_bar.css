@@ -1,36 +1,66 @@
 .navBar {
-	z-index: 1000;
-	background-color: #333;
-	display: flex;
-	justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(13, 17, 23, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  height: 64px;
 }
 
-.imageContainer {
-  background-color: white;
+.logoArea {
   display: flex;
-  justify-content: center;
   align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logoImg {
+  height: 36px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .navBarText {
-  height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-  color: white;
-	cursor: pointer;
+  height: 64px;
+  line-height: 64px;
+  padding: 0 1.25rem;
+  color: #8b949e;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navBarText:hover {
+  color: #e6edf3;
 }
 
 .navActive {
-	height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-	cursor: pointer;
-	color: white;
-	border-bottom: solid 5px #019fb6;
+  height: 64px;
+  line-height: 64px;
+  padding: 0 1.25rem;
+  color: #0ea5e9;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #0ea5e9;
 }

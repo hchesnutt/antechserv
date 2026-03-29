@@ -1,126 +1,142 @@
 .pubs {
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 5rem 2rem;
+  border-top: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+.sectionLabel {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #0ea5e9;
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e6edf3;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.sectionDivider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, #0ea5e9, transparent);
+  margin-bottom: 3rem;
 }
 
 .pubsContainer {
-  height: 60vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: black;
-  opacity: .7;
+  max-width: 1100px;
 }
 
 .pubsList {
-	margin: 1em auto;
-	width: 100vh;
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-}
-
-.pubsList li {
-	/* display: inline-block; */
-	margin: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .pubsList img {
-	width: 320px;
-	display: block;
-	height: 400px;
-	-webkit-transition: all 500ms;
-	-moz-transition: all 500ms;
-	transition: all 500ms;
-	max-width: 100%;
+  width: 280px;
+  display: block;
+  height: 360px;
+  transition: transform 500ms ease;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .pubsList figure {
-	height: 400px;
-	overflow: hidden;
-	position: relative;
-	width: 289px;
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+  width: 280px;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .pubsList figcaption {
-	background: rgba(0,0,0,0.8);
-	color: white;
-	height: 100%;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	display: flex;
-	flex-direction: column;
+  background: rgba(0, 0, 0, 0.88);
+  color: white;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  overflow: hidden;
+  transition: opacity 400ms ease;
+  border-radius: 4px;
 }
 
 .pubsList figcaption p {
-	display: list-item;
-	font-size: 1em;
-	position: relative;
-	top: -40px;
-	width: 269px;
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition: all 500ms ease-out;
-	transition: all 500ms ease-out;
-	vertical-align: middle;
-	margin-top: 5%;
-	margin-left: 10px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  position: relative;
+  top: 16px;
+  transition: top 400ms ease-out, opacity 400ms ease-out;
+  opacity: 0;
+  margin-top: 0.6rem;
 }
 
 .pubsList figcaption h4 {
-	display: list-item;
-	font-size: 1.2em;
-	position: relative;
-	top: -40px;
-	width: 269px;
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition: all 500ms ease-out;
-	transition: all 500ms ease-out;
-	vertical-align: middle;
-	margin-top: 5%;
-	margin-left: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #e6edf3;
+  position: relative;
+  top: 16px;
+  transition: top 400ms ease-out, opacity 400ms ease-out;
+  opacity: 0;
+  line-height: 1.4;
 }
 
-.pubsList figcaption h4:after {
+.pubsList figcaption h4::after {
   display: block;
   content: '';
-  border-bottom: solid 1px #019fb6;
+  border-bottom: 2px solid #0ea5e9;
   transform: scaleX(0);
-  transition: transform 500ms ease-in-out;
-	width: 50%;
-	margin-left: 25%;
-	padding-bottom: 5%;
-
+  transform-origin: left;
+  transition: transform 400ms ease-in-out;
+  margin-top: 0.4rem;
 }
 
-
-.pubsList li:hover figcaption h4:after {
-	transform: scaleX(1);
+.pubsList li:hover figcaption h4::after {
+  transform: scaleX(1);
 }
 
 .pubsList li:hover figcaption {
-	opacity: 1;
+  opacity: 1;
 }
 
 .pubsList li:hover img {
-	-webkit-transform: scale(1.4);
-	-moz-transform: scale(1.4);
-	transform: scale(1.4);
+  transform: scale(1.08);
 }
 
 .pubsList li:hover figcaption p {
-	-moz-transform: translateY(40px);
-	-webkit-transform: translateY(40px);
-	transform: translateY(40px);
+  top: 0;
+  opacity: 1;
 }
 
 .pubsList li:hover figcaption h4 {
-	-moz-transform: translateY(40px);
-	-webkit-transform: translateY(40px);
-	transform: translateY(40px);
+  top: 0;
+  opacity: 1;
 }

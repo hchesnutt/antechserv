@@ -1,5 +1,14 @@
 .contactContainer {
-  height: 100vh;
+  min-height: 60vh;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  border-top: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+  }
 }

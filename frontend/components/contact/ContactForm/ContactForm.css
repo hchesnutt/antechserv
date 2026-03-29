@@ -1,15 +1,101 @@
 .contactForm {
-  padding: 10px;
-  border: 1px solid red;
   width: 50%;
+  padding: 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .contactFormContainer {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 480px;
 }
 
-.formItem {
-  
+.formLabel {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6e7681;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 4px;
+  color: #e6edf3;
+  font-size: 0.95rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.formInput::placeholder {
+  color: #6e7681;
+}
+
+.formInput:focus {
+  border-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.06);
+}
+
+.formTextarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 4px;
+  color: #e6edf3;
+  font-size: 0.95rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+}
+
+.formTextarea::placeholder {
+  color: #6e7681;
+}
+
+.formTextarea:focus {
+  border-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.06);
+}
+
+.sendButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0ea5e9;
+  color: #0d1117;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  align-self: flex-start;
+  border: none;
+}
+
+.sendButton:hover {
+  background: #38bdf8;
+  transform: translateY(-1px);
 }

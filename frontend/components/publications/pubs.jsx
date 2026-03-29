@@ -13,6 +13,9 @@ class Pubs extends React.Component {
   render(){
     return(
       <Element name='pubs' className={styles.pubs}>
+        <p className={styles.sectionLabel}>Research &amp; Reports</p>
+        <h2 className={styles.sectionTitle}>Publications</h2>
+        <div className={styles.sectionDivider}></div>
         <div className={styles.pubsContainer}>
           <ul className={styles.pubsList}>
             {Publications.map((pubSingle, i) => (

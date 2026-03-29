@@ -14,8 +14,12 @@ class About extends React.Component {
         <div className={styles.splashLogoArea}>
           <img src={'https://s3-us-west-1.amazonaws.com/antechserv/A%26N_logotype_med.png'} className={styles.splashLogo} />
         </div>
+        <p className={styles.tagline}>Data Analytics &amp; Policy Consulting</p>
+        <div className={styles.divider}></div>
         <div className={styles.aboutText}>
-          Welcome to A & N Technical Services Inc. We are a national consulting firm specializing in empirical policy analysis. We provide state-of-the-art financial expertise applied to water resources and water efficiency programs.
+          A national consulting firm specializing in empirical policy analysis.
+          We provide state-of-the-art financial expertise applied to water resources
+          and water efficiency programs.
         </div>
       </Element>
     )
