@@ -1,5 +1,6 @@
 import React from 'react';
 import { Element } from 'react-scroll';
+import logo from '../../../assets/an_logo/logo.png';
 
 import styles from './about.module.css';
 
@@ -15,7 +16,7 @@ class About extends React.Component {
           <div className={styles.leftCol}>
             <div className={styles.logoWrap}>
               <img
-                src={'https://s3-us-west-1.amazonaws.com/antechserv/A%26N_logotype_med.png'}
+                src={logo}
                 className={styles.logo}
                 alt="A&N Technical Services"
               />

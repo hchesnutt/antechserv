@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sticky } from 'react-sticky';
 import { Link, Events, animateScroll, scrollSpy } from 'react-scroll';
+import logo from '../../../assets/an_logo/logo.png';
 
 import styles from './nav_bar.module.css';
 
@@ -29,7 +30,7 @@ class NavBar extends React.Component {
         {({ style }) => (
           <div style={style} className={styles.navBar}>
             <div className={styles.imageContainer}>
-              <img src={'https://s3-us-west-1.amazonaws.com/antechserv/A%26N_logo.ai'}/>
+              <img src={logo} alt="A&N Technical Services"/>
             </div>
             <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-200} duration={500} onSetActive={this.handleSetActive}>
               <h2>About</h2>
