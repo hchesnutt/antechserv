@@ -48,16 +48,56 @@
   border-width: 0 1px 1px 0;
 }
 
-.content {
+/* Two-column wrapper */
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 0 80px;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left: logo canvas */
+.logoCol {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 860px;
-  padding: 60px 40px;
-  position: relative;
-  z-index: 1;
-  animation: fadeIn 0.9s ease-out both;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.logoLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: rgba(0, 200, 232, 0.35);
+  text-transform: uppercase;
+}
+
+/* Right: text */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 860px) {
+  .inner {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 24px;
+    text-align: center;
+    align-items: center;
+  }
+  .textCol {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .eyebrow {
