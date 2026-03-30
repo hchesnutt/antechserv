@@ -12,6 +12,7 @@ const RIPPLE_SPEED = 5;   // px per frame the ring expands
 const RIPPLE_MAX_R = 300; // radius at which a ripple dies
 const RIPPLE_FORCE = 40;  // max displacement from a ripple
 const RIPPLE_WIDTH = 18;  // half-width of the ring's influence band
+const RIPPLE_MAX_COUNT = 20; // hard cap on concurrent ripples
 
 // 4x4 Bayer ordered dither matrix, normalized 0–1
 const BAYER = [
@@ -30,6 +31,7 @@ export default function DitheredLogo() {
     cursorVel: { x: 0, y: 0 },
     ripples: [],
     animId: null,
+    rect: null,
   });
 
   useEffect(() => {
@@ -38,10 +40,20 @@ export default function DitheredLogo() {
     const W = canvas.width;
     const H = canvas.height;
     const s = stateRef.current;
+    let mounted = true;
+
+    // Cache bounding rect to avoid layout thrashing on every mouse event
+    s.rect = canvas.getBoundingClientRect();
+    const ro = new ResizeObserver(() => {
+      s.rect = canvas.getBoundingClientRect();
+    });
+    ro.observe(canvas);
 
     const img = new Image();
 
     img.onload = () => {
+      if (!mounted) return;
+
       // Draw image onto offscreen canvas to sample pixel data
       const off = document.createElement('canvas');
       off.width = W;
@@ -81,13 +93,22 @@ export default function DitheredLogo() {
         // How strongly to apply the teardrop effect (ramps up with speed, caps at 1)
         const tearStrength = Math.min(speed / 2, 1);
 
-        // Advance ripples, cull dead ones
-        for (const r of s.ripples) r.radius += RIPPLE_SPEED;
-        s.ripples = s.ripples.filter(r => r.radius < RIPPLE_MAX_R);
+        // Advance ripples, cull dead ones in-place to avoid per-frame allocation
+        let live = 0;
+        for (let ri = 0; ri < s.ripples.length; ri++) {
+          s.ripples[ri].radius += RIPPLE_SPEED;
+          if (s.ripples[ri].radius < RIPPLE_MAX_R) {
+            s.ripples[live++] = s.ripples[ri];
+          }
+        }
+        s.ripples.length = live;
 
         ctx.clearRect(0, 0, W, H);
-
         ctx.fillStyle = 'rgba(247, 242, 233, 0.85)';  // editorial cream/paper white
+
+        // Batch all dots into a single path — one fill() call instead of one per dot
+        ctx.beginPath();
+        const rLen = s.ripples.length;
         for (const dot of s.dots) {
           // Mouse repulsion target
           const dx = dot.bx - mx;
@@ -109,13 +130,13 @@ export default function DitheredLogo() {
           }
 
           // Ripple displacement — each active ring nudges nearby dots outward
-          for (const r of s.ripples) {
+          for (let ri = 0; ri < rLen; ri++) {
+            const r = s.ripples[ri];
             const rdx = dot.bx - r.x;
             const rdy = dot.by - r.y;
             const rdist = Math.hypot(rdx, rdy);
             const delta = rdist - r.radius;
-
-            if (Math.abs(delta) < RIPPLE_WIDTH && rdist > 0) {
+            if (rdist > 0 && Math.abs(delta) < RIPPLE_WIDTH) {
               const falloff = 1 - Math.abs(delta) / RIPPLE_WIDTH;
               const decay = 1 - r.radius / RIPPLE_MAX_R;
               const force = falloff * falloff * decay * RIPPLE_FORCE;
@@ -130,10 +151,10 @@ export default function DitheredLogo() {
           dot.cx += dot.vx;
           dot.cy += dot.vy;
 
-          ctx.beginPath();
+          ctx.moveTo(dot.cx + DOT_R, dot.cy);
           ctx.arc(dot.cx, dot.cy, DOT_R, 0, Math.PI * 2);
-          ctx.fill();
         }
+        ctx.fill();
 
         s.animId = requestAnimationFrame(frame);
       }
@@ -144,12 +165,15 @@ export default function DitheredLogo() {
     img.src = logoSrc;
 
     return () => {
+      mounted = false;
       if (s.animId) cancelAnimationFrame(s.animId);
+      ro.disconnect();
     };
   }, []);
 
   function onMouseMove(e) {
-    const rect = canvasRef.current.getBoundingClientRect();
+    const { rect } = stateRef.current;
+    if (!rect) return;
     const scaleX = canvasRef.current.width / rect.width;
     const scaleY = canvasRef.current.height / rect.height;
     stateRef.current.mouse = {
@@ -163,10 +187,13 @@ export default function DitheredLogo() {
   }
 
   function onClick(e) {
-    const rect = canvasRef.current.getBoundingClientRect();
+    const s = stateRef.current;
+    if (s.ripples.length >= RIPPLE_MAX_COUNT) return;
+    const { rect } = s;
+    if (!rect) return;
     const scaleX = canvasRef.current.width / rect.width;
     const scaleY = canvasRef.current.height / rect.height;
-    stateRef.current.ripples.push({
+    s.ripples.push({
       x: (e.clientX - rect.left) * scaleX,
       y: (e.clientY - rect.top) * scaleY,
       radius: 0,
