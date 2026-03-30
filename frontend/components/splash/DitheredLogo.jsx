@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import logoSrc from '../../../assets/an_logo/A&N_logo.png';
-import styles from './DitheredLogo.css';
+import styles from './DitheredLogo.module.css';
 
 const GRID = 1;           // pixels between sample points
 const DOT_R = 0.6;        // dot radius in px
