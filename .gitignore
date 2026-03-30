@@ -1,3 +1,12 @@
 node_modules
+dist/
+.vite/
+tsconfig.tsbuildinfo
+*.local
 
 .DS_Store
+*.swp
+*.swo
+.idea/
+
+notes.md
