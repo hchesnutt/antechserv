@@ -7,7 +7,18 @@ import styles from './nav_bar.module.css';
 class NavBar extends React.Component {
   constructor(props){
     super(props);
+    this.state = { menuOpen: false };
     this.scrollToTop = this.scrollToTop.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState(s => ({ menuOpen: !s.menuOpen }));
+  }
+
+  closeMenu() {
+    this.setState({ menuOpen: false });
   }
 
   componentDidMount(){
@@ -24,6 +35,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+    const { menuOpen } = this.state;
     return (
       <Sticky>
         {({ style }) => (
@@ -37,17 +49,28 @@ class NavBar extends React.Component {
               </div>
             </div>
 
-            <nav className={styles.navLinks}>
-              <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-72} duration={600}>
+            <button
+              className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
+              onClick={this.toggleMenu}
+              aria-label="Toggle navigation"
+              aria-expanded={menuOpen}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <nav className={`${styles.navLinks} ${menuOpen ? styles.navLinksOpen : ''}`}>
+              <Link activeClass="navActive" className={styles.navBarText} to="about" spy={true} smooth={true} offset={-72} duration={600} onClick={this.closeMenu}>
                 <h2>About</h2>
               </Link>
-              <Link activeClass="navActive" className={styles.navBarText} to="pubs" spy={true} smooth={true} offset={-72} duration={600}>
+              <Link activeClass="navActive" className={styles.navBarText} to="pubs" spy={true} smooth={true} offset={-72} duration={600} onClick={this.closeMenu}>
                 <h2>Publications</h2>
               </Link>
-              <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-72} duration={600}>
+              <Link activeClass="navActive" className={styles.navBarText} to="people" spy={true} smooth={true} offset={-72} duration={600} onClick={this.closeMenu}>
                 <h2>Team</h2>
               </Link>
-              <Link activeClass="navActive" className={styles.navBarText} to="contact" spy={true} smooth={true} offset={0} duration={600}>
+              <Link activeClass="navActive" className={styles.navBarText} to="contact" spy={true} smooth={true} offset={0} duration={600} onClick={this.closeMenu}>
                 <h2>Contact</h2>
               </Link>
             </nav>

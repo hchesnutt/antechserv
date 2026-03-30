@@ -179,3 +179,44 @@
 .splashRight canvas:hover {
   filter: drop-shadow(0 0 28px rgba(247, 242, 233, 0.22));
 }
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .splashLeft {
+    padding: 56px 40px 40px;
+  }
+
+  .splashRight {
+    padding: 60px 36px;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  .splash {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+
+  .splashLeft {
+    width: 100%;
+    min-height: 0;
+    padding: 52px 24px 44px;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+
+  .splashContent {
+    justify-content: flex-start;
+  }
+
+  .splashRight {
+    width: 100%;
+    padding: 48px 24px 52px;
+  }
+
+  .scrollCue {
+    display: none;
+  }
+}

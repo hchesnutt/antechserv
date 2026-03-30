@@ -179,3 +179,67 @@
   color: var(--accent-green);
   letter-spacing: 0.05em;
 }
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .pubs {
+    padding: 80px 40px 100px;
+  }
+
+  .sectionNumber {
+    font-size: 10rem;
+  }
+
+  .pubRow {
+    grid-template-columns: 48px 140px 1fr;
+    gap: 28px;
+  }
+
+  .pubImage {
+    width: 140px;
+    height: 186px;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  .pubs {
+    padding: 56px 24px 72px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+
+  .sectionNumber {
+    font-size: 8rem;
+    top: -32px;
+  }
+
+  .pubRow {
+    grid-template-columns: 88px 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+
+  .pubIndex {
+    display: none;
+  }
+
+  .pubImage {
+    width: 88px;
+    height: 117px;
+  }
+
+  .pubTitle {
+    font-size: 1.05rem;
+  }
+
+  .pubExcerpt {
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

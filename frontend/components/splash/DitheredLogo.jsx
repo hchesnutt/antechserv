@@ -51,6 +51,49 @@ export default function DitheredLogo() {
     });
     ro.observe(canvas);
 
+    // Touch support — use imperative addEventListener so we can pass { passive: false }
+    function getCanvasPos(clientX, clientY) {
+      const scaleX = canvas.width / s.rect.width;
+      const scaleY = canvas.height / s.rect.height;
+      return {
+        x: (clientX - s.rect.left) * scaleX,
+        y: (clientY - s.rect.top) * scaleY,
+      };
+    }
+
+    function handleTouchStart(e) {
+      e.preventDefault();
+      if (!s.rect) return;
+      const { x: mx, y: my } = getCanvasPos(e.touches[0].clientX, e.touches[0].clientY);
+      s.mouse = { x: mx, y: my };
+      if (s.ripples.length < RIPPLE_MAX_COUNT) {
+        s.ripples.push({ x: mx, y: my, radius: 0 });
+        s.lastRipplePos = { x: mx, y: my };
+      }
+    }
+
+    function handleTouchMove(e) {
+      e.preventDefault();
+      if (!s.rect) return;
+      const { x: mx, y: my } = getCanvasPos(e.touches[0].clientX, e.touches[0].clientY);
+      s.mouse = { x: mx, y: my };
+      const dx = mx - s.lastRipplePos.x;
+      const dy = my - s.lastRipplePos.y;
+      if (Math.hypot(dx, dy) >= RIPPLE_MOVE_DIST && s.ripples.length < RIPPLE_MAX_COUNT) {
+        s.ripples.push({ x: mx, y: my, radius: 0 });
+        s.lastRipplePos = { x: mx, y: my };
+      }
+    }
+
+    function handleTouchEnd() {
+      s.mouse = { x: -9999, y: -9999 };
+      s.lastRipplePos = { x: -9999, y: -9999 };
+    }
+
+    canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+    canvas.addEventListener('touchend', handleTouchEnd);
+
     const img = new Image();
 
     img.onload = () => {
@@ -170,6 +213,9 @@ export default function DitheredLogo() {
       mounted = false;
       if (s.animId) cancelAnimationFrame(s.animId);
       ro.disconnect();
+      canvas.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchmove', handleTouchMove);
+      canvas.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 

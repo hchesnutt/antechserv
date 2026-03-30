@@ -139,3 +139,44 @@
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .about {
+    padding: 80px 40px 100px;
+  }
+
+  .sectionNumber {
+    font-size: 10rem;
+  }
+
+  .aboutBody {
+    gap: 48px;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  .about {
+    padding: 56px 24px 72px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+
+  .sectionNumber {
+    font-size: 8rem;
+    top: -32px;
+  }
+
+  .aboutBody {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .specs {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+}

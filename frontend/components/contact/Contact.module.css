@@ -60,3 +60,39 @@
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .contactContainer {
+    padding: 80px 40px 100px;
+  }
+
+  .sectionNumber {
+    font-size: 10rem;
+  }
+
+  .contactBody {
+    gap: 48px;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  .contactContainer {
+    padding: 56px 24px 72px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+
+  .sectionNumber {
+    font-size: 8rem;
+    top: -32px;
+  }
+
+  .contactBody {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
