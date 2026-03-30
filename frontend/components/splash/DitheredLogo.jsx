@@ -4,15 +4,16 @@ import styles from './DitheredLogo.module.css';
 
 const GRID = 1;           // pixels between sample points
 const DOT_R = 0.6;        // dot radius in px
-const REPEL_R = 40;       // mouse repulsion radius in canvas px
-const REPEL_FORCE = 55;   // max dot displacement in px
-const SPRING = 0.08;      // spring strength pulling dot toward target
-const DAMPING = 0.72;     // velocity damping per frame (lower = more sluggish)
-const RIPPLE_SPEED = 5;   // px per frame the ring expands
+const REPEL_R = 52;       // mouse repulsion radius in canvas px
+const REPEL_FORCE = 65;   // max dot displacement in px
+const SPRING = 0.13;      // spring strength pulling dot toward target
+const DAMPING = 0.78;     // velocity damping per frame (lower = more sluggish)
+const RIPPLE_SPEED = 6;   // px per frame the ring expands
 const RIPPLE_MAX_R = 300; // radius at which a ripple dies
-const RIPPLE_FORCE = 40;  // max displacement from a ripple
-const RIPPLE_WIDTH = 18;  // half-width of the ring's influence band
-const RIPPLE_MAX_COUNT = 20; // hard cap on concurrent ripples
+const RIPPLE_FORCE = 48;  // max displacement from a ripple
+const RIPPLE_WIDTH = 22;  // half-width of the ring's influence band
+const RIPPLE_MAX_COUNT = 30; // hard cap on concurrent ripples
+const RIPPLE_MOVE_DIST = 20; // canvas px of cursor travel before spawning a motion ripple
 
 // 4x4 Bayer ordered dither matrix, normalized 0–1
 const BAYER = [
@@ -30,6 +31,7 @@ export default function DitheredLogo() {
     prevMouse: { x: -9999, y: -9999 },
     cursorVel: { x: 0, y: 0 },
     ripples: [],
+    lastRipplePos: { x: -9999, y: -9999 },
     animId: null,
     rect: null,
   });
@@ -172,18 +174,26 @@ export default function DitheredLogo() {
   }, []);
 
   function onMouseMove(e) {
-    const { rect } = stateRef.current;
-    if (!rect) return;
-    const scaleX = canvasRef.current.width / rect.width;
-    const scaleY = canvasRef.current.height / rect.height;
-    stateRef.current.mouse = {
-      x: (e.clientX - rect.left) * scaleX,
-      y: (e.clientY - rect.top) * scaleY,
-    };
+    const s = stateRef.current;
+    if (!s.rect) return;
+    const scaleX = canvasRef.current.width / s.rect.width;
+    const scaleY = canvasRef.current.height / s.rect.height;
+    const mx = (e.clientX - s.rect.left) * scaleX;
+    const my = (e.clientY - s.rect.top) * scaleY;
+    s.mouse = { x: mx, y: my };
+
+    // Spawn a ripple every RIPPLE_MOVE_DIST px of cursor travel
+    const dx = mx - s.lastRipplePos.x;
+    const dy = my - s.lastRipplePos.y;
+    if (Math.hypot(dx, dy) >= RIPPLE_MOVE_DIST && s.ripples.length < RIPPLE_MAX_COUNT) {
+      s.ripples.push({ x: mx, y: my, radius: 0 });
+      s.lastRipplePos = { x: mx, y: my };
+    }
   }
 
   function onMouseLeave() {
     stateRef.current.mouse = { x: -9999, y: -9999 };
+    stateRef.current.lastRipplePos = { x: -9999, y: -9999 };
   }
 
   function onClick(e) {
