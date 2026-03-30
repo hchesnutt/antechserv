@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import styles from './splash.module.css';
+import DitheredLogo from './DitheredLogo';
 
 const Splash = () => {
   return (
@@ -41,10 +42,7 @@ const Splash = () => {
       {/* Right green block — 40% */}
       <div className={styles.splashRight}>
         <div className={styles.splashRightInner}>
-          <p className={styles.rightQuote}>
-            "Nothing is so difficult as not deceiving oneself."
-          </p>
-          <p className={styles.rightAttrib}>— Ludwig Wittgenstein</p>
+          <DitheredLogo />
           <div className={styles.rightDivider}></div>
           <p className={styles.rightDesc}>
             State-of-the-art financial expertise applied to water resources

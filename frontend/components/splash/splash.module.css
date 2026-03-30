@@ -133,7 +133,11 @@
 }
 
 .splashRightInner {
-  max-width: 340px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
 .rightQuote {
@@ -152,14 +156,13 @@
   font-style: italic;
   color: rgba(247, 242, 233, 0.5);
   letter-spacing: 0.04em;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .rightDivider {
   width: 40px;
   height: 1px;
   background-color: rgba(184, 134, 11, 0.6);
-  margin-bottom: 32px;
 }
 
 .rightDesc {
@@ -167,4 +170,12 @@
   font-size: 0.9rem;
   color: rgba(247, 242, 233, 0.65);
   line-height: 1.75;
+}
+
+.splashRight canvas {
+  filter: drop-shadow(0 0 18px rgba(247, 242, 233, 0.12));
+  transition: filter 0.3s ease;
+}
+.splashRight canvas:hover {
+  filter: drop-shadow(0 0 28px rgba(247, 242, 233, 0.22));
 }
