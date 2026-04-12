@@ -23,9 +23,30 @@ const BAYER = [
   [15,  7, 13,  5],
 ].map(row => row.map(v => v / 16));
 
+interface Dot {
+  bx: number; by: number;
+  cx: number; cy: number;
+  vx: number; vy: number;
+}
+
+interface Vec2 { x: number; y: number; }
+
+interface Ripple { x: number; y: number; radius: number; }
+
+interface AnimState {
+  dots: Dot[];
+  mouse: Vec2;
+  prevMouse: Vec2;
+  cursorVel: Vec2;
+  ripples: Ripple[];
+  lastRipplePos: Vec2;
+  animId: number | null;
+  rect: DOMRect | null;
+}
+
 export default function DitheredLogo() {
-  const canvasRef = useRef(null);
-  const stateRef = useRef({
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const stateRef = useRef<AnimState>({
     dots: [],
     mouse: { x: -9999, y: -9999 },
     prevMouse: { x: -9999, y: -9999 },
@@ -38,7 +59,8 @@ export default function DitheredLogo() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
     const W = canvas.width;
     const H = canvas.height;
     const s = stateRef.current;
@@ -52,16 +74,17 @@ export default function DitheredLogo() {
     ro.observe(canvas);
 
     // Touch support — use imperative addEventListener so we can pass { passive: false }
-    function getCanvasPos(clientX, clientY) {
-      const scaleX = canvas.width / s.rect.width;
-      const scaleY = canvas.height / s.rect.height;
+    function getCanvasPos(clientX: number, clientY: number) {
+      const rect = s.rect!;
+      const scaleX = canvas!.width / rect.width;
+      const scaleY = canvas!.height / rect.height;
       return {
-        x: (clientX - s.rect.left) * scaleX,
-        y: (clientY - s.rect.top) * scaleY,
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY,
       };
     }
 
-    function handleTouchStart(e) {
+    function handleTouchStart(e: TouchEvent) {
       e.preventDefault();
       if (!s.rect) return;
       const { x: mx, y: my } = getCanvasPos(e.touches[0].clientX, e.touches[0].clientY);
@@ -72,7 +95,7 @@ export default function DitheredLogo() {
       }
     }
 
-    function handleTouchMove(e) {
+    function handleTouchMove(e: TouchEvent) {
       e.preventDefault();
       if (!s.rect) return;
       const { x: mx, y: my } = getCanvasPos(e.touches[0].clientX, e.touches[0].clientY);
@@ -103,7 +126,7 @@ export default function DitheredLogo() {
       const off = document.createElement('canvas');
       off.width = W;
       off.height = H;
-      const octx = off.getContext('2d');
+      const octx = off.getContext('2d')!;
       octx.drawImage(img, 0, 0, W, H);
       const { data } = octx.getImageData(0, 0, W, H);
 
@@ -223,11 +246,11 @@ export default function DitheredLogo() {
     };
   }, []);
 
-  function onMouseMove(e) {
+  function onMouseMove(e: React.MouseEvent<HTMLCanvasElement>) {
     const s = stateRef.current;
     if (!s.rect) return;
-    const scaleX = canvasRef.current.width / s.rect.width;
-    const scaleY = canvasRef.current.height / s.rect.height;
+    const scaleX = canvasRef.current!.width / s.rect.width;
+    const scaleY = canvasRef.current!.height / s.rect.height;
     const mx = (e.clientX - s.rect.left) * scaleX;
     const my = (e.clientY - s.rect.top) * scaleY;
     s.mouse = { x: mx, y: my };
@@ -246,13 +269,13 @@ export default function DitheredLogo() {
     stateRef.current.lastRipplePos = { x: -9999, y: -9999 };
   }
 
-  function onClick(e) {
+  function onClick(e: React.MouseEvent<HTMLCanvasElement>) {
     const s = stateRef.current;
     if (s.ripples.length >= RIPPLE_MAX_COUNT) return;
     const { rect } = s;
     if (!rect) return;
-    const scaleX = canvasRef.current.width / rect.width;
-    const scaleY = canvasRef.current.height / rect.height;
+    const scaleX = canvasRef.current!.width / rect.width;
+    const scaleY = canvasRef.current!.height / rect.height;
     s.ripples.push({
       x: (e.clientX - rect.left) * scaleX,
       y: (e.clientY - rect.top) * scaleY,

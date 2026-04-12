@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from './pubs.module.css';
 
-const PubCard = ({ link_url, image, header, text, index }) => {
+interface PubCardProps {
+  link_url: string;
+  image: string;
+  header: string;
+  text: string;
+  index: number;
+}
+
+const PubCard = ({ link_url, image, header, text, index }: PubCardProps) => {
   return (
     <article className={styles.pubRow}>
       <span className={styles.pubIndex}>{String(index).padStart(2, '0')}</span>

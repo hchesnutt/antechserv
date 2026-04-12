@@ -6,7 +6,7 @@ import NavBar from './nav_bar/nav_bar';
 import About from './about/about';
 import People from './about_people/people';
 import Pubs from './publications/pubs';
-import Contact from './contact/Contact.jsx';
+import Contact from './contact/Contact';
 import styles from './root.module.css';
 
 

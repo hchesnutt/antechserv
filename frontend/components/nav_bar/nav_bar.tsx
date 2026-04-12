@@ -4,8 +4,12 @@ import { Link, Events, animateScroll, scrollSpy } from 'react-scroll';
 
 import styles from './nav_bar.module.css';
 
-class NavBar extends React.Component {
-  constructor(props){
+interface NavBarState {
+  menuOpen: boolean;
+}
+
+class NavBar extends React.Component<Record<string, never>, NavBarState> {
+  constructor(props: Record<string, never>){
     super(props);
     this.state = { menuOpen: false };
     this.scrollToTop = this.scrollToTop.bind(this);

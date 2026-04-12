@@ -4,8 +4,8 @@ import { Element } from 'react-scroll';
 import styles from './clients.module.css';
 import clientImages from '../../../assets/clients';
 
-class Clients extends React.Component {
-  constructor(props){
+class Clients extends React.Component<Record<string, never>> {
+  constructor(props: Record<string, never>){
     super(props);
   }
 

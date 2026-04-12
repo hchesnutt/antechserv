@@ -2,7 +2,14 @@ import imgMesa from '../../../assets/publication/AnalysisofWaterUseEfficiency.pn
 import imgBuildingBetter from '../../../assets/publication/BuildingBetterWaterRatesHandbookCoverPicSmall.png';
 import imgMWDOC from '../../../assets/publication/MWDOC_WUE_MasterPlan2013.png';
 
-const Publications = [{
+export interface Publication {
+  link_url: string;
+  image: string;
+  header: string;
+  text: string;
+}
+
+const Publications: Publication[] = [{
 	link_url: 'https://www.usbr.gov/lc/socal/reports/MesaWDFinalReport.pdf',
 	image: imgMesa,
 	header: 'Mesa Water District Water Use Efficiency Benchmarking Study and Plan Final Project Report (January 2014)',

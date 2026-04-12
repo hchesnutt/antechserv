@@ -2,7 +2,19 @@ import tcImg from '../../../assets/tc_headshotphoto_2.jpg';
 import dpImg from '../../../assets/dp_headshotphoto_1.jpg';
 import dhImg from '../../../assets/dh_headshot_1.jpeg';
 
-const peeps = [{
+export interface Peep {
+  background: string;
+  imgSrc: string;
+  imgBorderColor: string;
+  name: string;
+  title: string;
+  mobileNo: string;
+  faxNo: string;
+  location: string;
+  role: string;
+}
+
+const peeps: Peep[] = [{
 	background: '#51A5BA',
 	imgSrc: tcImg,
 	imgBorderColor: '#015389',

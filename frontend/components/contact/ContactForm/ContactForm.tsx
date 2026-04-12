@@ -5,8 +5,13 @@ import config from '../../../../config';
 const { contactFormAddress } = config;
 
 
-class ContactForm extends Component {
-  constructor(props) {
+interface ContactFormState {
+  subject: string;
+  contents: string;
+}
+
+class ContactForm extends Component<Record<string, never>, ContactFormState> {
+  constructor(props: Record<string, never>) {
     super(props)
     this.state = {
       subject: '',
@@ -14,11 +19,11 @@ class ContactForm extends Component {
     }
   }
 
-  handleSubject = (e) => {
+  handleSubject = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ subject: e.target.value });
   };
 
-  handleContents = (e) => {
+  handleContents = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     this.setState({ contents: e.target.value });
   };
 
