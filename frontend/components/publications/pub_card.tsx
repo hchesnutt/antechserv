@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './pubs.module.css';
 
 interface PubCardProps {

@@ -1,4 +1,3 @@
-import React from 'react';
 import PubCard from './pub_card';
 import Publications from './publications';
 import { Element } from 'react-scroll';

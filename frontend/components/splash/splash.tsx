@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-scroll';
 import styles from './splash.module.css';
 import DitheredLogo from './DitheredLogo';
