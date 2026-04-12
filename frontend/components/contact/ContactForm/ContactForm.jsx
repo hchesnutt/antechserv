@@ -5,7 +5,7 @@ import config from '../../../../config';
 const { contactFormAddress } = config;
 
 
-class contactForm extends Component {
+class ContactForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -26,26 +26,34 @@ class contactForm extends Component {
     return (
       <section className={styles.contactForm}>
         <div className={styles.contactFormContainer}>
-          <input
-            className={styles.formItem}
-            type="email"
-            value={this.state.subject}
-            onChange={this.handleSubject}
-            maxLength={150}
-            placeholder={'subject'}
+          <div className={styles.formField}>
+            <label className={styles.formLabel}>Subject</label>
+            <input
+              className={styles.formItem}
+              type="text"
+              value={this.state.subject}
+              onChange={this.handleSubject}
+              maxLength={150}
+              placeholder={'How can we help?'}
             />
-          <textarea
-            className={styles.formItem}
-            value={this.state.contents}
-            onChange={this.handleContents}
-            maxLength={1000}
-            placeholder={'body'}
+          </div>
+
+          <div className={styles.formField}>
+            <label className={styles.formLabel}>Message</label>
+            <textarea
+              className={`${styles.formItem} ${styles.formTextarea}`}
+              value={this.state.contents}
+              onChange={this.handleContents}
+              maxLength={1000}
+              placeholder={'Tell us about your project…'}
             />
-          <a 
-            className={styles.formItem}
-            href={`mailto:${contactFormAddress}?subject=${this.state.subject}&body=${this.state.contents.replace(/\n/g, '%0D%0A')}`}
+          </div>
+
+          <a
+            className={styles.sendButton}
+            href={`mailto:${contactFormAddress}?subject=${encodeURIComponent(this.state.subject)}&body=${encodeURIComponent(this.state.contents)}`}
           >
-            Send
+            Send Inquiry
           </a>
         </div>
       </section>
@@ -53,4 +61,4 @@ class contactForm extends Component {
   }
 }
 
-export default contactForm;
+export default ContactForm;

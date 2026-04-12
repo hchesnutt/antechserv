@@ -1,126 +1,245 @@
 .pubs {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--bg-primary);
+  padding: 100px 80px 120px;
+  position: relative;
+  overflow: hidden;
 }
 
-.pubsContainer {
-  height: 60vh;
-  width: 100%;
+/* ── Section Header ── */
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 72px;
+  position: relative;
+}
+
+.sectionNumber {
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  opacity: var(--section-num-opacity);
+  line-height: 1;
+  position: absolute;
+  top: -60px;
+  left: -12px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sectionLabel {
   display: flex;
   align-items: center;
-  background-color: black;
-  opacity: .7;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 4px;
+}
+
+.sectionRule {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background-color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.sectionLabelText {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-style: italic;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+/* ── Publication List ── */
+.pubsInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .pubsList {
-	margin: 1em auto;
-	width: 100vh;
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
-.pubsList li {
-	/* display: inline-block; */
-	margin: 1em;
+/* ── Individual Publication Row ── */
+.pubRow {
+  display: grid;
+  grid-template-columns: 64px 180px 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: border-bottom-color 0.25s ease;
+  position: relative;
 }
 
-.pubsList img {
-	width: 320px;
-	display: block;
-	height: 400px;
-	-webkit-transition: all 500ms;
-	-moz-transition: all 500ms;
-	transition: all 500ms;
-	max-width: 100%;
+.pubRow:first-child {
+  border-top: 1px solid var(--border-light);
 }
 
-.pubsList figure {
-	height: 400px;
-	overflow: hidden;
-	position: relative;
-	width: 289px;
-}
-
-.pubsList figcaption {
-	background: rgba(0,0,0,0.8);
-	color: white;
-	height: 100%;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	display: flex;
-	flex-direction: column;
-}
-
-.pubsList figcaption p {
-	display: list-item;
-	font-size: 1em;
-	position: relative;
-	top: -40px;
-	width: 269px;
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition: all 500ms ease-out;
-	transition: all 500ms ease-out;
-	vertical-align: middle;
-	margin-top: 5%;
-	margin-left: 10px;
-}
-
-.pubsList figcaption h4 {
-	display: list-item;
-	font-size: 1.2em;
-	position: relative;
-	top: -40px;
-	width: 269px;
-	-webkit-transition: all 500ms ease-out;
-	-moz-transition: all 500ms ease-out;
-	transition: all 500ms ease-out;
-	vertical-align: middle;
-	margin-top: 5%;
-	margin-left: 10px;
-}
-
-.pubsList figcaption h4:after {
-  display: block;
+.pubRow::after {
   content: '';
-  border-bottom: solid 1px #019fb6;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--accent-gold);
   transform: scaleX(0);
-  transition: transform 500ms ease-in-out;
-	width: 50%;
-	margin-left: 25%;
-	padding-bottom: 5%;
-
+  transform-origin: left;
+  transition: transform 0.35s ease;
 }
 
-
-.pubsList li:hover figcaption h4:after {
-	transform: scaleX(1);
+.pubRow:hover::after {
+  transform: scaleX(1);
 }
 
-.pubsList li:hover figcaption {
-	opacity: 1;
+/* Faint index number */
+.pubIndex {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  opacity: 0.08;
+  line-height: 1;
+  padding-top: 4px;
+  user-select: none;
 }
 
-.pubsList li:hover img {
-	-webkit-transform: scale(1.4);
-	-moz-transform: scale(1.4);
-	transform: scale(1.4);
+/* Thumbnail */
+.pubImageWrap {
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
-.pubsList li:hover figcaption p {
-	-moz-transform: translateY(40px);
-	-webkit-transform: translateY(40px);
-	transform: translateY(40px);
+.pubImage {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
-.pubsList li:hover figcaption h4 {
-	-moz-transform: translateY(40px);
-	-webkit-transform: translateY(40px);
-	transform: translateY(40px);
+.pubRow:hover .pubImage {
+  transform: scale(1.03);
+  opacity: 0.88;
+}
+
+/* Text block */
+.pubContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.pubLink {
+  text-decoration: none;
+}
+
+.pubTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.pubLink:hover .pubTitle {
+  color: var(--accent-green);
+}
+
+.pubExcerpt {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 580px;
+}
+
+.readMore {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.readMore:hover {
+  color: var(--accent-green);
+  letter-spacing: 0.05em;
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .pubs {
+    padding: 80px 40px 100px;
+  }
+
+  .sectionNumber {
+    font-size: 10rem;
+  }
+
+  .pubRow {
+    grid-template-columns: 48px 140px 1fr;
+    gap: 28px;
+  }
+
+  .pubImage {
+    width: 140px;
+    height: 186px;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  .pubs {
+    padding: 56px 24px 72px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 48px;
+  }
+
+  .sectionNumber {
+    font-size: 8rem;
+    top: -32px;
+  }
+
+  .pubRow {
+    grid-template-columns: 88px 1fr;
+    gap: 16px;
+    padding: 28px 0;
+  }
+
+  .pubIndex {
+    display: none;
+  }
+
+  .pubImage {
+    width: 88px;
+    height: 117px;
+  }
+
+  .pubTitle {
+    font-size: 1.05rem;
+  }
+
+  .pubExcerpt {
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }

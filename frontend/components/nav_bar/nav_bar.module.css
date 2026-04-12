@@ -1,36 +1,184 @@
 .navBar {
-	z-index: 1000;
-	background-color: #333;
-	display: flex;
-	justify-content: center;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  box-shadow: 0 1px 12px rgba(26, 26, 46, 0.06);
 }
 
-.imageContainer {
-  background-color: white;
+.logoArea {
   display: flex;
-  justify-content: center;
   align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.logoSub {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  display: block;
+  font-weight: 400;
+}
+
+.logoDivider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--border-medium);
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navBarText {
-  height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-  color: white;
-	cursor: pointer;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  letter-spacing: 0.01em;
+  line-height: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
 }
 
-.navActive {
-	height: 80px;
-  width: 100%;
-  line-height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-  text-align: center;
-	cursor: pointer;
-	color: white;
-	border-bottom: solid 5px #019fb6;
+.navBarText:hover {
+  color: var(--accent-green);
+}
+
+.navBarText h2 {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  color: inherit;
+}
+
+/* ── Hamburger Button ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background-color: var(--text-primary);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburgerOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .navBar {
+    padding: 0 32px;
+  }
+
+  .navBarText {
+    padding: 8px 12px;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  .navBar {
+    height: auto;
+    min-height: 60px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .logoArea {
+    height: 60px;
+  }
+
+  .logoText {
+    font-size: 0.95rem;
+  }
+
+  .logoSub {
+    font-size: 0.62rem;
+  }
+
+  .hamburger {
+    display: flex;
+    height: 60px;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0 16px;
+    gap: 0;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .navLinksOpen {
+    display: flex;
+  }
+
+  .navBarText {
+    height: auto;
+    line-height: 1;
+    padding: 14px 8px;
+    width: 100%;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .navBarText h2 {
+    font-size: 1rem;
+  }
 }
