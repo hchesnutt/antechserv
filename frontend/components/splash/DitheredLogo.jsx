@@ -2,18 +2,18 @@ import React, { useRef, useEffect } from 'react';
 import logoSrc from '../../../assets/an_logo/A&N_logo.png';
 import styles from './DitheredLogo.module.css';
 
-const GRID = 1;           // pixels between sample points
-const DOT_R = 0.6;        // dot radius in px
-const REPEL_R = 52;       // mouse repulsion radius in canvas px
-const REPEL_FORCE = 65;   // max dot displacement in px
+const GRID = 2;           // pixels between sample points
+const DOT_R = 0.9;        // dot radius in px
+const REPEL_R = 40;       // mouse repulsion radius in canvas px
+const REPEL_FORCE = 32;   // max dot displacement in px
 const SPRING = 0.13;      // spring strength pulling dot toward target
 const DAMPING = 0.78;     // velocity damping per frame (lower = more sluggish)
 const RIPPLE_SPEED = 6;   // px per frame the ring expands
-const RIPPLE_MAX_R = 300; // radius at which a ripple dies
-const RIPPLE_FORCE = 48;  // max displacement from a ripple
-const RIPPLE_WIDTH = 22;  // half-width of the ring's influence band
+const RIPPLE_MAX_R = 150; // radius at which a ripple dies
+const RIPPLE_FORCE = 10;  // max displacement from a ripple
+const RIPPLE_WIDTH = 10;  // half-width of the ring's influence band
 const RIPPLE_MAX_COUNT = 30; // hard cap on concurrent ripples
-const RIPPLE_MOVE_DIST = 20; // canvas px of cursor travel before spawning a motion ripple
+const RIPPLE_MOVE_DIST = 5; // canvas px of cursor travel before spawning a motion ripple
 
 // 4x4 Bayer ordered dither matrix, normalized 0–1
 const BAYER = [
@@ -158,12 +158,13 @@ export default function DitheredLogo() {
           // Mouse repulsion target
           const dx = dot.bx - mx;
           const dy = dot.by - my;
-          const dist = Math.hypot(dx, dy);
+          const dist2 = dx * dx + dy * dy;
 
           let tx = dot.bx;
           let ty = dot.by;
 
-          if (dist < REPEL_R && dist > 0) {
+          if (dist2 < REPEL_R * REPEL_R && dist2 > 0) {
+            const dist = Math.sqrt(dist2);
             const t = 1 - dist / REPEL_R;
             // alignment: +1 = dot is ahead of cursor, -1 = dot is behind
             const alignment = (dx * cdx + dy * cdy) / dist;
@@ -179,6 +180,9 @@ export default function DitheredLogo() {
             const r = s.ripples[ri];
             const rdx = dot.bx - r.x;
             const rdy = dot.by - r.y;
+            // Cheap AABB pre-check — skip sqrt for dots clearly outside the ring band
+            const outerR = r.radius + RIPPLE_WIDTH;
+            if (Math.abs(rdx) > outerR || Math.abs(rdy) > outerR) continue;
             const rdist = Math.hypot(rdx, rdy);
             const delta = rdist - r.radius;
             if (rdist > 0 && Math.abs(delta) < RIPPLE_WIDTH) {
