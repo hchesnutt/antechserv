@@ -3,17 +3,17 @@ import logoSrc from '../../../assets/an_logo/A&N_logo.png';
 import styles from './DitheredLogo.module.css';
 
 const GRID = 2;           // pixels between sample points
-const DOT_R = 0.9;        // dot radius in px
-const REPEL_R = 40;       // mouse repulsion radius in canvas px
-const REPEL_FORCE = 32;   // max dot displacement in px
-const SPRING = 0.13;      // spring strength pulling dot toward target
-const DAMPING = 0.78;     // velocity damping per frame (lower = more sluggish)
+const DOT_R = 1.2;        // dot radius in px
+const REPEL_R = 33;       // mouse repulsion radius in canvas px
+const REPEL_FORCE = 58;   // max dot displacement in px
+const SPRING = 0.06;      // spring strength pulling dot toward target
+const DAMPING = 0.88;     // velocity damping per frame (lower = more sluggish)
 const RIPPLE_SPEED = 6;   // px per frame the ring expands
-const RIPPLE_MAX_R = 150; // radius at which a ripple dies
-const RIPPLE_FORCE = 10;  // max displacement from a ripple
-const RIPPLE_WIDTH = 10;  // half-width of the ring's influence band
+const RIPPLE_MAX_R = 700; // radius at which a ripple dies
+const RIPPLE_FORCE = 55;  // max displacement from a ripple
+const RIPPLE_WIDTH = 14;  // half-width of the ring's influence band
 const RIPPLE_MAX_COUNT = 30; // hard cap on concurrent ripples
-const RIPPLE_MOVE_DIST = 5; // canvas px of cursor travel before spawning a motion ripple
+const RIPPLE_MOVE_DIST = 99999; // disabled — motion ripples off, click-only
 
 // 4x4 Bayer ordered dither matrix, normalized 0–1
 const BAYER = [
@@ -137,7 +137,7 @@ export default function DitheredLogo() {
           const brightness = (data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114) / 255;
           const threshold = BAYER[(y / GRID | 0) % 4][(x / GRID | 0) % 4];
           // Inverted dither: bright pixels become dots, dark/bg areas stay empty
-          if (brightness > threshold) {
+          if (brightness > threshold * 0.7) {
             dots.push({ bx: x, by: y, cx: x, cy: y, vx: 0, vy: 0 });
           }
         }
