@@ -8,11 +8,6 @@ const Splash = () => {
       {/* Left editorial column — 60% */}
       <div className={styles.splashLeft}>
         <div className={styles.splashContent}>
-          <div className={styles.eyebrow}>
-            <span className={styles.eyebrowRule}></span>
-            <span className={styles.eyebrowText}>Vol. I &mdash; Water Policy Analysis</span>
-          </div>
-
           <h1 className={styles.headline}>
             A &amp; N<br />
             <em className={styles.headlineItalic}>Technical</em><br />
